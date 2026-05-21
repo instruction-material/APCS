@@ -4,6 +4,9 @@ Canonical source repository: `APCS`
 
 ## Mapped Catalog Courses
 
+- `java-level-1`: Java Level 1
+- `java-without-graphics`: Java without Graphics
+- `java-with-graphics`: Java with Graphics
 - `ap-computer-science-a`: AP Computer Science A
 
 ## Verification Gate
@@ -28,7 +31,6 @@ Canonical source repository: `APCS`
 | `APCS1-Casting-Reference` |
 | `APCS1-Hospital-Survey` |
 | `APCS1-Mad-Libs` |
-| `APCS1-Mad-Libs-Template` |
 | `APCS1-Rounding-It-Off` |
 | `APCS1-Strings-and-Printing-Reference` |
 | `APCS1-Variables-Reference` |
@@ -40,7 +42,6 @@ Canonical source repository: `APCS`
 | `APCS11-Array-List-Reference` |
 | `APCS11-Card-and-Deck-Classes` |
 | `APCS11-Card-Shuffler` |
-| `APCS11-Card-Shuffler-Starter` |
 | `APCS11-Fortune-Teller-Class` |
 | `APCS11-Free-Response-Practice` |
 | `APCS11-Multiple-Choice-Reference` |
@@ -48,10 +49,8 @@ Canonical source repository: `APCS`
 | `APCS12-Deck-Class` |
 | `APCS12-Minimum-and-Maximum` |
 | `APCS12-Suit-Deck-and-Hand` |
-| `APCS12-Suit-Deck-and-Hand-Starter` |
 | `APCS13-Linear-Search-Implementation` |
 | `APCS13-Runtime-Analysis` |
-| `APCS13-Runtime-Analysis-Starter` |
 | `APCS14-Insertion-Sort` |
 | `APCS14-Selection-Sort` |
 | `APCS15-Blob-Erase` |
@@ -59,7 +58,6 @@ Canonical source repository: `APCS`
 | `APCS15-Recursion-Reference` |
 | `APCS15-Stack-Overflow-Reference` |
 | `APCS15-Tracing-Recursion` |
-| `APCS15-Tracing-Recursion-Starter` |
 | `APCS16-Binary-Search` |
 | `APCS16-Merge-Sort` |
 | `APCS17-Decode` |
@@ -69,7 +67,6 @@ Canonical source repository: `APCS`
 | `APCS2-Too-Chicken-To-Cross-The-Road` |
 | `APCS2-Two-In-One` |
 | `APCS2-Verifying-Expressions` |
-| `APCS2-Verifying-Expressions-Starter` |
 | `APCS3-Conditionals-Reference` |
 | `APCS3-Elevator-Warning` |
 | `APCS3-Math-Fun` |
@@ -79,7 +76,6 @@ Canonical source repository: `APCS`
 | `APCS4-For-Loop-Practice` |
 | `APCS4-Loops-Reference` |
 | `APCS4-Translating-Loops` |
-| `APCS4-Translating-Loops-Starter` |
 | `APCS4-While-Loop-and-Nested-Loop-Practice` |
 | `APCS4-While-Loops-and-Nested-Loops-Reference` |
 | `APCS5-Class-Example` |
@@ -90,7 +86,6 @@ Canonical source repository: `APCS`
 | `APCS5-Student-Class` |
 | `APCS6-Bank-Account-Class` |
 | `APCS6-Farm-Class` |
-| `APCS6-Farm-Class-Starter` |
 | `APCS6-Free-Response-Practice` |
 | `APCS6-Getters-and-Setters-Reference` |
 | `APCS6-This-Reference` |
@@ -100,16 +95,19 @@ Canonical source repository: `APCS`
 | `APCS7-Multiple-Choice-Reference` |
 | `APCS7-Pets` |
 | `APCS8-Many-Shapes` |
-| `APCS8-Many-Shapes-Starter` |
 | `APCS8-Multiple-Choice-Reference` |
 | `APCS8-Polymorphism-Reference` |
 | `APCS9-Robust-Input-Practice` |
-| `APCS9-Robust-Input-Practice-Starter` |
 | `APCS9-Specification` |
 
 ## Source Inventory
 
-- Top-level folders: 116
-- Active linked folders: 90
-- Ledgered inactive/support folders: 26
-- Source-like files: 230
+- Active project folders: 80
+- Active linked folders: 80
+- Archived inactive/support folders: 26
+- Wrapper project folders: 80
+- Placeholder role folders awaiting a distinct counterpart: 70
+- Complete starter/solution pairs with distinct migrated content: 10
+- Active source-like files excluding archive: 334
+
+Notes: active source-like files exclude `_archived-unlinked/`. Placeholder role folders are structural markers only; they do not contain assignment source yet.
