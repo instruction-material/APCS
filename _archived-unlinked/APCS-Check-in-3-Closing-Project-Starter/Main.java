@@ -1,5 +1,6 @@
-class Main {
-  public static void main(String[] args) {
-    Shifter shift = new Shifter();
-  }
+class Main
+{
+	public static void main(String[] args) {
+		Shifter shift = new Shifter();
+	}
 }

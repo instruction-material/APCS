@@ -2,7 +2,8 @@
 
 Canonical source repository: `APCS`
 
-This project consolidates the legacy `APCS2-Verifying-Expressions` and `APCS2-Verifying-Expressions-Starter` folders into the common course wrapper layout.
+This project consolidates the legacy `APCS2-Verifying-Expressions` and `APCS2-Verifying-Expressions-Starter` folders into the common course
+wrapper layout.
 
 ## Structure
 

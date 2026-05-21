@@ -2,7 +2,8 @@
 
 Canonical source repository: `APCS`
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the current solution/reference snapshot.
+This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
+current solution/reference snapshot.
 
 ## Structure
 

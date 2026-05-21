@@ -2,7 +2,8 @@
 
 Canonical source repository: `APCS`
 
-This project consolidates the legacy `APCS12-Suit-Deck-and-Hand` and `APCS12-Suit-Deck-and-Hand-Starter` folders into the common course wrapper layout.
+This project consolidates the legacy `APCS12-Suit-Deck-and-Hand` and `APCS12-Suit-Deck-and-Hand-Starter` folders into the common course
+wrapper layout.
 
 ## Structure
 

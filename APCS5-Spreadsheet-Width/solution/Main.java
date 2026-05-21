@@ -1,9 +1,10 @@
-class Main {
-  public static void main(String[] args) {
+class Main
+{
+	public static void main(String[] args) {
 		
 		int width = 5;
 		String string = "potato";
-
+		
 		String finalString = "|";
 		int length = string.length();
 		

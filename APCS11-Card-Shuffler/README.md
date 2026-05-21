@@ -2,7 +2,8 @@
 
 Canonical source repository: `APCS`
 
-This project consolidates the legacy `APCS11-Card-Shuffler` and `APCS11-Card-Shuffler-Starter` folders into the common course wrapper layout.
+This project consolidates the legacy `APCS11-Card-Shuffler` and `APCS11-Card-Shuffler-Starter` folders into the common course wrapper
+layout.
 
 ## Structure
 

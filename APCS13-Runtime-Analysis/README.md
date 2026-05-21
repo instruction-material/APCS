@@ -2,7 +2,8 @@
 
 Canonical source repository: `APCS`
 
-This project consolidates the legacy `APCS13-Runtime-Analysis` and `APCS13-Runtime-Analysis-Starter` folders into the common course wrapper layout.
+This project consolidates the legacy `APCS13-Runtime-Analysis` and `APCS13-Runtime-Analysis-Starter` folders into the common course wrapper
+layout.
 
 ## Structure
 

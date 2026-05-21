@@ -2,7 +2,8 @@
 
 Canonical source repository: `APCS`
 
-This project consolidates the legacy `APCS15-Tracing-Recursion` and `APCS15-Tracing-Recursion-Starter` folders into the common course wrapper layout.
+This project consolidates the legacy `APCS15-Tracing-Recursion` and `APCS15-Tracing-Recursion-Starter` folders into the common course
+wrapper layout.
 
 ## Structure
 

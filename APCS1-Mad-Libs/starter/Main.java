@@ -1,5 +1,6 @@
-class Main {
-  public static void main(String[] args) {
+class Main
+{
+	public static void main(String[] args) {
     /*
 
     A vacation is when you take a trip to some _________ place
@@ -37,5 +38,5 @@ class Main {
     PLURAL NOUN
     
     */
-  }
+	}
 }

@@ -1,8 +1,10 @@
 import java.util.Scanner;
 
-class Main {
-  public static void main(String[] args) {
-    
+
+class Main
+{
+	public static void main(String[] args) {
+		
 		Scanner s = new Scanner(System.in);
 		
 		System.out.println("\nBasic Information");
@@ -17,11 +19,11 @@ class Main {
 		int day = s.nextInt();
 		System.out.print("Year: ");
 		int year = s.nextInt();
-    s.nextLine(); // clear the new-line character
+		s.nextLine(); // clear the new-line character
 		System.out.print("Address: ");
 		String address = s.nextLine();
 		System.out.println();
-
+		
 		System.out.println("\nToday's Visit");
 		System.out.print("What brings you in here today? ");
 		String issue = s.nextLine();
@@ -39,8 +41,7 @@ class Main {
 		System.out.print("I feel stressed about schoolwork, family, or something else. ");
 		boolean stresses = s.nextBoolean();
 		System.out.println();
-
-		System.out.println("Thanks for completing this survey!");
 		
-  }
+		System.out.println("Thanks for completing this survey!");
+	}
 }

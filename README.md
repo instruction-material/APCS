@@ -25,7 +25,8 @@ This installs Eclipse Temurin JDK 21. On the tested computer, it installed:
 C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\
 ```
 
-After installing, close all PowerShell terminals and all VS Code windows, then reopen them. Windows may not update `PATH` for terminals that were already open.
+After installing, close all PowerShell terminals and all VS Code windows, then reopen them. Windows may not update `PATH` for terminals that
+were already open.
 
 ### 2. Install the VS Code Java extension
 
@@ -102,7 +103,8 @@ C:\ProgramData\Oracle\Java\javapath
 
 ### 5. Run an APCS assignment in VS Code
 
-This repo has many folders with a file named `Main.java`. Most files use the default Java package. Because of that, VS Code works best if you open one assignment folder at a time instead of opening the whole `APCS` folder when you want to run code.
+This repo has many folders with a file named `Main.java`. Most files use the default Java package. Because of that, VS Code works best if
+you open one assignment folder at a time instead of opening the whole `APCS` folder when you want to run code.
 
 For example:
 

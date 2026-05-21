@@ -2,7 +2,8 @@
 
 Canonical source repository: `APCS`
 
-This project consolidates the legacy `APCS4-Translating-Loops` and `APCS4-Translating-Loops-Starter` folders into the common course wrapper layout.
+This project consolidates the legacy `APCS4-Translating-Loops` and `APCS4-Translating-Loops-Starter` folders into the common course wrapper
+layout.
 
 ## Structure
 

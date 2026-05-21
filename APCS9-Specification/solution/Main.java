@@ -1,5 +1,6 @@
-class Main {
-  public static void main(String[] args) {
+class Main
+{
+	public static void main(String[] args) {
     /* Spec:
     This is a specification for the project Decks.
     This project will allow users to play card games. A user should be able to instantiate a deck of cards. These cards should follow their natural ordering, meaning King is bigger than 2 and Diamonds is bigger than Hearts, which is bigger than Spades, which is bigger than Clubs.
@@ -22,5 +23,5 @@ class Main {
     Finally, we will have a dealer that manages all of the current games. Dealers should be able to view the deck of cards for any current game player, so we need to ensure that the game has public accessor methods.
     
     */
-  }
+	}
 }

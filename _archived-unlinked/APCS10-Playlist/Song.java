@@ -1,4 +1,5 @@
-public class Song{
-  private String name;
-  private String artist;
+public class Song
+{
+	private String name;
+	private String artist;
 }
