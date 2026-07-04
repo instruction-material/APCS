@@ -1,5 +1,13 @@
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main
 {
+	/**
+	 * @brief Read input, compute the answer, and write output
+	 *
+	 * @param args Command-line arguments
+	 */
 	public static void main(String[] args) {
     /*
     System.out.println(f1(10));
@@ -10,7 +18,7 @@ class Main
 
     System.out.println(f3(3, 7));
     System.out.println();
-    
+
     System.out.println(f4(128));
     System.out.println();
 
@@ -21,7 +29,7 @@ class Main
     System.out.println(f6(nums));
     */
 	}
-	
+
 	//2n operations
 	public static int f1(int n) {
 		int count = 0;
@@ -31,7 +39,7 @@ class Main
 		}
 		return count;
 	}
-	
+
 	// n^2 operations
 	public static int f2(int n) {
 		int count = 0;
@@ -43,7 +51,7 @@ class Main
 		}
 		return count;
 	}
-	
+
 	// n*m operations
 	public static int f3(int n, int m) {
 		int count = 0;
@@ -55,7 +63,7 @@ class Main
 		}
 		return count;
 	}
-	
+
 	// log2(n) operations
 	public static int f4(int n) {
 		count = 0;
@@ -65,7 +73,7 @@ class Main
 		}
 		return count;
 	}
-	
+
 	// n^2 operations
 	public static int f5(int[] arr) {
 		count = 0;
@@ -77,7 +85,7 @@ class Main
 		}
 		return count;
 	}
-	
+
 	/* ~n^2 operations
 	0 times, then 1 time, then 2 times, and so on, all the way up to n-1 times. Summing, the method performs 0 + 1 + 2 + … + n-2 + n-1 = ~n^2 operations
 	*/

@@ -1,13 +1,20 @@
 import java.util.ArrayList;
 
-
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main
 {
+	/**
+	 * @brief Read input, compute the answer, and write output
+	 *
+	 * @param args Command-line arguments
+	 */
 	public static void main(String[] args) {
 		Deck deck = makeDeck();
 		Elevens game = new Elevens(deck);
 	}
-	
+
 	public static Deck makeDeck() {
 		ArrayList<Card> cards = new ArrayList<>();
 		for (int i = 1; i < 14; i++) {
@@ -18,7 +25,7 @@ class Main
 		}
 		return shuffle(cards);
 	}
-	
+
 	public static Deck shuffle(ArrayList<Card> cards) {
 		ArrayList<Card> shuffled = new ArrayList<>();
 		while (cards.size() > 0) {

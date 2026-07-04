@@ -1,9 +1,17 @@
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main
 {
+	/**
+	 * @brief Read input, compute the answer, and write output
+	 *
+	 * @param args Command-line arguments
+	 */
 	public static void main(String[] args) {
-		
+
 		RobustScanner scanner = new RobustScanner();
-		
+
 		//1. divide two integers
 		System.out.println("\nAttempt to divide two integers...");
 		System.out.print("Enter an number: ");
@@ -15,7 +23,7 @@ class Main
 			num2 = scanner.nextInt();
 		}
 		System.out.println(num1 / num2);
-		
+
 		//2. print the third letter of a word
 		System.out.println("\nAttempt to print the third letter of a word...");
 		String word = "";
@@ -25,7 +33,7 @@ class Main
 			word = scanner.next();
 		}
 		System.out.println(word.charAt(2));
-		
+
 		//3. print the given index of 'Juni Learning'
 		System.out.println("\nAttempt to print the character at the given index of 'Juni Learning':");
 		String message = "Juni Learning";
@@ -36,14 +44,14 @@ class Main
 			index = scanner.nextInt();
 		}
 		System.out.println(message.charAt(index));
-		
+
 		//4. count from num1 to num2
 		System.out.println("\nAttempt to count from num1 to num2:");
 		System.out.print("Enter an number: ");
 		num1 = scanner.nextInt();
 		System.out.print("Enter another number: ");
 		num2 = scanner.nextInt();
-		
+
 		//this always works,
 		//regardless of whether we should count up or down
 		if (num1 < num2) {

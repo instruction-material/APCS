@@ -1,12 +1,19 @@
 import java.util.Scanner;
 
-
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main
 {
+	/**
+	 * @brief Read input, compute the answer, and write output
+	 *
+	 * @param args Command-line arguments
+	 */
 	public static void main(String[] args) {
-		
+
 		Scanner s = new Scanner(System.in);
-		
+
 		System.out.println("\nBasic Information");
 		System.out.print("First Name: ");
 		String firstName = s.nextLine();
@@ -23,7 +30,7 @@ class Main
 		System.out.print("Address: ");
 		String address = s.nextLine();
 		System.out.println();
-		
+
 		System.out.println("\nToday's Visit");
 		System.out.print("What brings you in here today? ");
 		String issue = s.nextLine();
@@ -32,7 +39,7 @@ class Main
 		System.out.print("What medicines have you taken? ");
 		String medicine = s.nextLine();
 		System.out.println();
-		
+
 		System.out.println("\nSelect true or false for the following statements:");
 		System.out.print("I exercise for 2-3 hours a week. ");
 		boolean exercisesEnough = s.nextBoolean();
@@ -41,7 +48,7 @@ class Main
 		System.out.print("I feel stressed about schoolwork, family, or something else. ");
 		boolean stresses = s.nextBoolean();
 		System.out.println();
-		
+
 		System.out.println("Thanks for completing this survey!");
 	}
 }

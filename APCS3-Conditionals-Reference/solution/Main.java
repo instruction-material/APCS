@@ -1,5 +1,13 @@
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main
 {
+	/**
+	 * @brief Read input, compute the answer, and write output
+	 *
+	 * @param args Command-line arguments
+	 */
 	public static void main(String[] args) {
 		int age = 35;
 		if (age <= 10) {
@@ -50,8 +58,8 @@ class Main
 		} else {
 			System.out.println("Getting up there!");
 		}
-		
-		
+
+
 		if (age < 50) {
 			if (age % 10 == 5) {
 				System.out.println("Cool dude!");

@@ -1,12 +1,19 @@
 import java.util.ArrayList;
 
-
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main
 {
+	/**
+	 * @brief Read input, compute the answer, and write output
+	 *
+	 * @param args Command-line arguments
+	 */
 	public static void main(String[] args) {
 		Fleet fleet = makeFleet();
 	}
-	
+
 	public static Fleet makeFleet() {
 		ArrayList<Spaceship> ships = new ArrayList<>();
 		System.out.println("Making a fleet of 4 ships");
@@ -25,7 +32,7 @@ class Main
 		System.out.println(fleet);
 		return fleet;
 	}
-	
+
 	public static ArrayList<Passenger> makePassenger() {
 		ArrayList<Passenger> people = new ArrayList<>();
 		System.out.println("Making 10 passengers");
@@ -36,7 +43,7 @@ class Main
 		}
 		return people;
 	}
-	
+
 	public static String randomName() {
 		int n = (int) (Math.random() * 11);
 		String name = "";

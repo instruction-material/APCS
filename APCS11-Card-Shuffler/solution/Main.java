@@ -1,23 +1,30 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main
 {
+	/**
+	 * @brief Read input, compute the answer, and write output
+	 *
+	 * @param args Command-line arguments
+	 */
 	public static void main(String[] args) {
-		
+
 		//create a complete suit of cards
 		ArrayList<Card> cards = new ArrayList<>();
 		for (int i = 1; i < 14; i++) {
 			cards.add(new Card("Hearts", i));
 		}
-		
+
 		//1. print the cards before shuffling
 		System.out.println("\nBefore Shuffling:\n");
 		for (Card card : cards) {
 			System.out.println(card);
 		}
-		
+
 		//2. shuffle the cards
 		Random random = new Random();
 		ArrayList<Card> shuffled = new ArrayList<>();
@@ -28,7 +35,7 @@ class Main
 			shuffled.add(card);
 		}
 		cards = shuffled;
-		
+
 		//3. print the cards after shuffling
 		System.out.println("\nAfter Shuffling:\n");
 		for (Card card : cards) {

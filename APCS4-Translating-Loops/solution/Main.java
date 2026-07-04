@@ -1,5 +1,13 @@
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main
 {
+	/**
+	 * @brief Read input, compute the answer, and write output
+	 *
+	 * @param args Command-line arguments
+	 */
 	public static void main(String[] args) {
 		System.out.println("For loop output: ");
 		for (int i = 0; i < 10; i++) {
@@ -11,7 +19,7 @@ class Main
 			System.out.print(i);
 			i++;
 		}
-		
+
 		System.out.println("\nFor loop output: ");
 		for (int j = 0; j > -10; j--) {
 			System.out.print(j);
@@ -22,7 +30,7 @@ class Main
 			System.out.print(j);
 			j--;
 		}
-		
+
 		System.out.println("\nFor loop output: ");
 		for (int k = 1; k < 10; k *= 2) {
 			System.out.print(k);
@@ -33,7 +41,7 @@ class Main
 			System.out.print(k);
 			k *= 2;
 		}
-		
+
 		System.out.println("\nFor loop output: ");
 		for (int l = 0; l != -1; l += 1) {
 			System.out.print(l);

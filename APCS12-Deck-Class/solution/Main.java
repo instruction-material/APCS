@@ -1,8 +1,15 @@
 import java.util.ArrayList;
 
-
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main
 {
+	/**
+	 * @brief Read input, compute the answer, and write output
+	 *
+	 * @param args Command-line arguments
+	 */
 	public static void main(String[] args) {
 		Deck firstDeck = makeDeck();
 		Deck secondDeck = makeDeck();
@@ -20,7 +27,7 @@ class Main
 			System.out.println("Better try again :(");
 		}
 	}
-	
+
 	public static Deck makeDeck() {
 		ArrayList<Card> cards = new ArrayList<>();
 		for (int i = 0; i < 14; i++) {

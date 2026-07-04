@@ -1,5 +1,13 @@
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main
 {
+	/**
+	 * @brief Read input, compute the answer, and write output
+	 *
+	 * @param args Command-line arguments
+	 */
 	public static void main(String[] args) {
 		int[][] A = {{1, 2, 3}, {4, 5, 6}};
 		int[][] B = {{1, 2}, {3, 4}, {4, 5}};
@@ -7,27 +15,27 @@ class Main
 		printMatrix(A);
 		System.out.println("\nMatrix B: ");
 		printMatrix(B);
-		
+
 		int[][] prod = matrixMul(A, B);
 		System.out.println("\nA*B = ");
 		printMatrix(prod);
-		
+
 		int[][] C = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 		int[][] D = {{9, 8, 7}, {6, 5, 4}, {3, 2, 1}};
 		System.out.println("\nMatrix C: ");
 		printMatrix(C);
 		System.out.println("\nMatrix D: ");
 		printMatrix(D);
-		
+
 		int[][] sum = matAdd(C, D);
 		System.out.println("\nC+D = ");
 		printMatrix(sum);
-		
+
 		int[][] difference = matSub(C, D);
 		System.out.println("\nC-D = ");
 		printMatrix(difference);
 	}
-	
+
 	/*Assume each has at least one element*/
 	public static int[][] matrixMul(int[][] A, int[][] B) {
 		int r1 = A.length;
@@ -44,7 +52,7 @@ class Main
 		}
 		return product;
 	}
-	
+
 	/*Assume each has at least one element and both matricies have the same dimensions*/
 	public static int[][] matSub(int[][] A, int[][] B) {
 		int row = A.length;
@@ -57,7 +65,7 @@ class Main
 		}
 		return difference;
 	}
-	
+
 	/*Assume each has at least one element and both matricies have the same dimensions*/
 	public static int[][] matAdd(int[][] A, int[][] B) {
 		int row = A.length;
@@ -70,7 +78,7 @@ class Main
 		}
 		return sum;
 	}
-	
+
 	public static void printMatrix(int[][] matrix) {
 		for (int[] row : matrix) {
 			for (int i : row) {

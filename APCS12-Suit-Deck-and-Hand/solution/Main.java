@@ -1,11 +1,19 @@
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main
 {
+	/**
+	 * @brief Read input, compute the answer, and write output
+	 *
+	 * @param args Command-line arguments
+	 */
 	public static void main(String[] args) {
-		
+
 		System.out.println("\nSUIT:");
 		Suit suit = new Suit("Diamonds");
 		System.out.println(suit);
-		
+
 		System.out.println("DECK:");
 		Deck deck = new Deck();
 		System.out.println("Initial deck size: " + deck.size());
@@ -16,7 +24,7 @@ class Main
 		System.out.println("Deck size now: " + deck.size());
 		System.out.println("\nRemaining deck:");
 		System.out.println(deck);
-		
+
 		System.out.println("HAND:");
 		Hand hand = new Hand();
 		System.out.println("Add 2 cards from the deck");

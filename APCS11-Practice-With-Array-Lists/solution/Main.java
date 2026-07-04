@@ -1,38 +1,45 @@
 import java.util.ArrayList;
 
-
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main
 {
+	/**
+	 * @brief Read input, compute the answer, and write output
+	 *
+	 * @param args Command-line arguments
+	 */
 	public static void main(String[] args) {
-		
+
 		ArrayList<Integer> nums = new ArrayList<>();
 		ArrayList<Double> decimalNums = new ArrayList<>();
 		for (int i = 0; i < 10; i++) {
 			nums.add((int) (Math.random() * 100));
 			decimalNums.add(Math.random() * 10 - 5);
 		}
-		
+
 		System.out.println("\nNumbers: " + nums);
 		System.out.println("# of evens in the list: " + numEvens(nums));
 		System.out.println("Sum of the numbers: " + sum(nums));
-		
+
 		ArrayList<String> words = new ArrayList<>();
 		words.add("class");
 		words.add("apple");
 		words.add("teacher");
 		System.out.println("\nList of words: " + words);
 		System.out.println("Words that start with A: " + startsWithA(words));
-		
+
 		System.out.println("\nDecimal Numbers: " + decimalNums);
 		replaceNums(decimalNums);
 		System.out.println("Replaced Decimals: " + decimalNums);
-		
+
 		System.out.println("\nNumbers: " + nums);
 		System.out.println("Removing Last Even Number... ");
 		removeLastEven(nums);
 		System.out.println("Numbers: " + nums);
 	}
-	
+
 	// 1. Write a method that takes in an ArrayList of integers and returns the number of even numbers in the list.
 	public static int numEvens(ArrayList<Integer> nums) {
 		int count = 0;
@@ -43,7 +50,7 @@ class Main
 		}
 		return count;
 	}
-	
+
 	// 2. Write a method that takes in an ArrayList of integers and returns the sum of the list.
 	public static int sum(ArrayList<Integer> nums) {
 		int sum = 0;
@@ -52,7 +59,7 @@ class Main
 		}
 		return sum;
 	}
-	
+
 	// 3.  Write a method that takes in an ArrayList of words and returns an ArrayList of only the words that start with the letter 'a.'
 	public static ArrayList<String> startsWithA(ArrayList<String> words) {
 		ArrayList<String> result = new ArrayList<String>();
@@ -63,7 +70,7 @@ class Main
 		}
 		return result;
 	}
-	
+
 	// 4. Write a method that takes in an ArrayList of doubles and edits the elements in the ArrayList so that negative numbers are replaced with -1.0 and positive numbers are replaced with 1.0.
 	public static void replaceNums(ArrayList<Double> nums) {
 		for (int i = 0; i < nums.size(); i++) {
@@ -74,7 +81,7 @@ class Main
 			}
 		}
 	}
-	
+
 	// 5. Write a method that takes in an ArrayList of integers and removes the very last even number in the ArrayList.
 	public static void removeLastEven(ArrayList<Integer> nums) {
 		// Method 1: loop from the end towards the beginning

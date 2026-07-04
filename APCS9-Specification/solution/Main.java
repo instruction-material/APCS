@@ -1,5 +1,13 @@
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main
 {
+	/**
+	 * @brief Read input, compute the answer, and write output
+	 *
+	 * @param args Command-line arguments
+	 */
 	public static void main(String[] args) {
     /* Spec:
     This is a specification for the project Decks.
@@ -15,13 +23,13 @@ class Main
     /* Approach:
 
     First, we will implement Suit. Each Suit should know which suits are greater and less than themselves.
-    Then, we will implement Card such that each Card has a Suit. Card should have a compareTo method to ensure that we can order the cards correctly. 
+    Then, we will implement Card such that each Card has a Suit. Card should have a compareTo method to ensure that we can order the cards correctly.
     Then, we will implement Deck that will hold a collection of cards. Decks should be able to remove card(s), shuffle, and deal (return) a specific number of cards.
 
     We will then implement a game that maintains two decks (one for each player) and routinly uses the remove and deal methods to isolate specific cards for the game.
 
     Finally, we will have a dealer that manages all of the current games. Dealers should be able to view the deck of cards for any current game player, so we need to ensure that the game has public accessor methods.
-    
+
     */
 	}
 }

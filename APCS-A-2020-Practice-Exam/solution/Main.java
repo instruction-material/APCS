@@ -1,13 +1,21 @@
+/**
+ * @brief Solve the lesson problem using the provided input and output format
+ */
 class Main
 {
+	/**
+	 * @brief Read input, compute the answer, and write output
+	 *
+	 * @param args Command-line arguments
+	 */
 	public static void main(String[] args) {
 		System.out.println("Hello world!");
 	}
-	
+
 	/**
 	 * Note that this code WILL NOT BUILD since the implementation of the classes needed is not provided.
 	 */
-	
+
 	/**
 	 * Returns true if numWithCheckDigit is valid, or false
 	 * otherwise, as described in part (a)
@@ -25,7 +33,7 @@ class Main
 			return false;
 		}
 	}
-	
+
 	/**
 	 * SOLUTION FOR QUESTION 1
 	 */
@@ -38,7 +46,7 @@ class Main
 		}
 		return count;
 	}
-	
+
 	/**
 	 * SOLUTION FOR QUESTION 2
 	 */
@@ -52,7 +60,7 @@ class Main
 		if (purchases.size() < 2) {
 			return false;
 		}
-		
+
 		for (int i = 1; i < purchases.size() - 1; ++i) {
 			if (purchases.get(i).equals(purchases.get(i + 1))) {
 				return true;
