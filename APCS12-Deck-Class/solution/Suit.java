@@ -1,3 +1,8 @@
+/***********************
+ *   CODING STANDARD   *
+ ***********************/
+// Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 //Wrapper class around the idea of a Suit
 public class Suit implements Comparable<Suit>
 {

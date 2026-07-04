@@ -1,3 +1,8 @@
+/***********************
+ *   CODING STANDARD   *
+ ***********************/
+// Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 public class Mamalia extends Chordata
 {
 	public Mamalia(String n, String o, String f, String g, String s) {

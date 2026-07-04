@@ -1,3 +1,8 @@
+/***********************
+ *   CODING STANDARD   *
+ ***********************/
+// Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 //Inheritance question 1
 
 // Have the student define a superclass Rectangle with instance variables corresponding to width, height, and fillColor and a constructor. Include area method.

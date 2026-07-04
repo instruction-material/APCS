@@ -1,3 +1,8 @@
+/***********************
+ *   CODING STANDARD   *
+ ***********************/
+// Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 public class Dog extends Pet
 {
 	public Dog(String name, boolean isMale, int age, String owner) {

@@ -1,3 +1,8 @@
+/***********************
+ *   CODING STANDARD   *
+ ***********************/
+// Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 //Inheritance question 2
 
 // Have the student define a subclass Square. Implement constructor by referencing super.

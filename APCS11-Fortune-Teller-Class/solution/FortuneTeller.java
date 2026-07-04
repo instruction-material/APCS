@@ -1,3 +1,8 @@
+/***********************
+ *   CODING STANDARD   *
+ ***********************/
+// Use named constants, descriptive names, and purpose comments before nontrivial scopes
+
 import java.util.ArrayList;
 // Create a class called FortuneTeller. Each FortuneTeller should have an array of five fixed fortunes (strings) that you make up. Printing a FortuneTeller should output one of these five fortunes randomly.
 
