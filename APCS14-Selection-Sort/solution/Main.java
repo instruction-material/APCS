@@ -4,42 +4,41 @@ import java.util.Random;
 /**
  * @brief Solve the lesson problem using the provided input and output format
  */
-class Main
-{
-	/**
+class Main {
+    /**
 	 * @brief Read input, compute the answer, and write output
 	 *
 	 * @param args Command-line arguments
 	 */
-	public static void main(String[] args) {
-		int size = 10;
-		ArrayList<Integer> nums = new ArrayList<>();
-		Random random = new Random();
+    public static void main(String[] args) {
+        int size = 10;
+        ArrayList<Integer> nums = new ArrayList<>();
+        Random random = new Random();
 
-		//add random numbers
-		for (int i = 0; i < size; i++) {
-			nums.add(random.nextInt(100));
-		}
+        //add random numbers
+        for (int i = 0; i < size; i++) {
+            nums.add(random.nextInt(100));
+        }
 
-		System.out.println("\nUnsorted: " + nums);
-		selectionSort(nums);
-		System.out.println("Sorted: " + nums);
-	}
+        System.out.println("\nUnsorted: " + nums);
+        selectionSort(nums);
+        System.out.println("Sorted: " + nums);
+    }
 
-	public static void selectionSort(ArrayList<Integer> nums) {
-		for (int i = 0; i < nums.size(); i++) {
-			//1. find the next smallest
-			int minIndex = i;
-			for (int j = i; j < nums.size(); j++) {
-				if (nums.get(j) < nums.get(minIndex)) {
-					minIndex = j;
-				}
-			}
-			//2. swap to the end of the sorted section
-			int min = nums.get(minIndex);
-			int temp = nums.get(i);
-			nums.set(i, min);
-			nums.set(minIndex, temp);
-		}
-	}
+    public static void selectionSort(ArrayList<Integer> nums) {
+        for (int i = 0; i < nums.size(); i++) {
+            //1. find the next smallest
+            int minIndex = i;
+            for (int j = i; j < nums.size(); j++) {
+                if (nums.get(j) < nums.get(minIndex)) {
+                    minIndex = j;
+                }
+            }
+            //2. swap to the end of the sorted section
+            int min = nums.get(minIndex);
+            int temp = nums.get(i);
+            nums.set(i, min);
+            nums.set(minIndex, temp);
+        }
+    }
 }

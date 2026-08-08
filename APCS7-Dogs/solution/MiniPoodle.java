@@ -1,12 +1,6 @@
-/***********************
- *   CODING STANDARD   *
- ***********************/
-// Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
-public class MiniPoodle extends Poodle
-{
-	public MiniPoodle(String name, String owner, String color, int age) {
-		super(name, owner, color, age);
-		super.setSize(10); //make it mini
-	}
+public class MiniPoodle extends Poodle {
+    public MiniPoodle(String name, String owner, String color, int age) {
+        super(name, owner, color, age);
+        super.setSize(10); //make it mini
+    }
 }

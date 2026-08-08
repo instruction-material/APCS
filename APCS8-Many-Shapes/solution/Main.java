@@ -1,27 +1,26 @@
 /**
  * @brief Solve the lesson problem using the provided input and output format
  */
-class Main
-{
-	/**
+class Main {
+    /**
 	 * @brief Read input, compute the answer, and write output
 	 *
 	 * @param args Command-line arguments
 	 */
-	public static void main(String[] args) {
-		Shape shape;
+    public static void main(String[] args) {
+        Shape shape;
 
-		//pick implementation
-		shape = new Shape();
-		//shape = new Square(15);
-		//shape = new Rectangle(5, 10);
-		//shape = new RightTriangle(3,4);
-		//shape = new Circle(2.5);
+        //pick implementation
+        shape = new Shape();
+        //shape = new Square(15);
+        //shape = new Rectangle(5, 10);
+        //shape = new RightTriangle(3,4);
+        //shape = new Circle(2.5);
 
-		//print info
-		System.out.println("\n" + shape.getName());
-		System.out.println("Area: " + shape.getArea());
-		System.out.println("Perimeter: " + shape.getPerimeter());
-		System.out.println("# of Sides: " + shape.getNumSides());
-	}
+        //print info
+        System.out.println("\n" + shape.getName());
+        System.out.println("Area: " + shape.getArea());
+        System.out.println("Perimeter: " + shape.getPerimeter());
+        System.out.println("# of Sides: " + shape.getNumSides());
+    }
 }

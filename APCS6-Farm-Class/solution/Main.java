@@ -1,18 +1,17 @@
 /**
  * @brief Solve the lesson problem using the provided input and output format
  */
-class Main
-{
-	/**
+class Main {
+    /**
 	 * @brief Read input, compute the answer, and write output
 	 *
 	 * @param args Command-line arguments
 	 */
-	public static void main(String[] args) {
-		Farm farm = new Farm(20, 5);
-		farm.milk();
-		System.out.println("The cows have been milked: " + farm.getMilked());
-		farm.sellCow();
-		farm.feedCows();
-	}
+    public static void main(String[] args) {
+        Farm farm = new Farm(20, 5);
+        farm.milk();
+        System.out.println("The cows have been milked: " + farm.getMilked());
+        farm.sellCow();
+        farm.feedCows();
+    }
 }

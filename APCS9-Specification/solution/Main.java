@@ -1,15 +1,14 @@
 /**
  * @brief Solve the lesson problem using the provided input and output format
  */
-class Main
-{
-	/**
+class Main {
+    /**
 	 * @brief Read input, compute the answer, and write output
 	 *
 	 * @param args Command-line arguments
 	 */
-	public static void main(String[] args) {
-    /* Spec:
+    public static void main(String[] args) {
+        /* Spec:
     This is a specification for the project Decks.
     This project will allow users to play card games. A user should be able to instantiate a deck of cards. These cards should follow their natural ordering, meaning King is bigger than 2 and Diamonds is bigger than Hearts, which is bigger than Spades, which is bigger than Clubs.
     Make sure you can print a card clearly. The internal representation does not matter so long as it is consistent and can be printed in a human readable way, eg Ace of Diamonds or 2 of Clubs.
@@ -20,7 +19,7 @@ class Main
 
     */
 
-    /* Approach:
+        /* Approach:
 
     First, we will implement Suit. Each Suit should know which suits are greater and less than themselves.
     Then, we will implement Card such that each Card has a Suit. Card should have a compareTo method to ensure that we can order the cards correctly.
@@ -31,5 +30,5 @@ class Main
     Finally, we will have a dealer that manages all of the current games. Dealers should be able to view the deck of cards for any current game player, so we need to ensure that the game has public accessor methods.
 
     */
-	}
+    }
 }

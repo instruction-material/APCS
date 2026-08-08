@@ -1,12 +1,6 @@
-/***********************
- *   CODING STANDARD   *
- ***********************/
-// Use named constants, descriptive names, and purpose comments before nontrivial scopes
-
-class DownShifter extends Shifter
-{
-	@Override
-	public String shift(String word) {
-		return shift(word, -1);
-	}
+class DownShifter extends Shifter {
+    @Override
+    public String shift(String word) {
+        return shift(word, -1);
+    }
 }

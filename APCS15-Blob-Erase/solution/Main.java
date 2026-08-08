@@ -1,25 +1,24 @@
 /**
  * @brief Solve the lesson problem using the provided input and output format
  */
-class Main
-{
-	/**
+class Main {
+    /**
 	 * @brief Read input, compute the answer, and write output
 	 *
 	 * @param args Command-line arguments
 	 */
-	public static void main(String[] args) {
-		Image image = new Image();
+    public static void main(String[] args) {
+        Image image = new Image();
 
-		System.out.println("\nOriginal Grid:");
-		image.display();
+        System.out.println("\nOriginal Grid:");
+        image.display();
 
-		System.out.println("\nDeleting Blobs That Touch the Top Row");
-		for (int i = 0; i < 10; i++) {
-			image.eraseBlob(0, i);
-		}
+        System.out.println("\nDeleting Blobs That Touch the Top Row");
+        for (int i = 0; i < 10; i++) {
+            image.eraseBlob(0, i);
+        }
 
-		System.out.println("\nNew Grid:");
-		image.display();
-	}
+        System.out.println("\nNew Grid:");
+        image.display();
+    }
 }

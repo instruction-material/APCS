@@ -1,33 +1,28 @@
-/***********************
- *   CODING STANDARD   *
- ***********************/
-// Use named constants, descriptive names, and purpose comments before nontrivial scopes
+public class Shape {
+    private String name = "unknown";
+    private int numSides = 0;
 
-public class Shape
-{
-	private String name = "unknown";
-	private int numSides = 0;
-	
-	public Shape() {}
-	
-	public Shape(String name, int numSides) {
-		this.name = name;
-		this.numSides = numSides;
-	}
-	
-	public int getNumSides() {
-		return numSides;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	public double getArea() {
-		return 0.0;
-	}
-	
-	public double getPerimeter() {
-		return 0.0;
-	}
+    public Shape() {
+    }
+
+    public Shape(String name, int numSides) {
+        this.name = name;
+        this.numSides = numSides;
+    }
+
+    public int getNumSides() {
+        return numSides;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getArea() {
+        return 0.0;
+    }
+
+    public double getPerimeter() {
+        return 0.0;
+    }
 }

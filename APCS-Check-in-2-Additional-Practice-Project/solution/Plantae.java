@@ -1,16 +1,11 @@
-/***********************
- *   CODING STANDARD   *
- ***********************/
-// Use named constants, descriptive names, and purpose comments before nontrivial scopes
+public class Plantae extends Life {
+    public Plantae(String n, String p, String c, String o, String f, String g,
+                   String s) {
+        super(n, "Plantae", p, c, o, f, g, s);
+    }
 
-public class Plantae extends Life
-{
-	public Plantae(String n, String p, String c, String o, String f, String g, String s) {
-		super(n, "Plantae", p, c, o, f, g, s);
-	}
-	
-	@Override
-	public String toString() {
-		return super.toString() + " " + this.kingdomType;
-	}
+    @Override
+    public String toString() {
+        return super.toString() + " " + this.kingdomType;
+    }
 }

@@ -1,15 +1,14 @@
 /**
  * @brief Solve the lesson problem using the provided input and output format
  */
-class Main
-{
-	//This file not used in APCS7 Multiple Choice
-	/**
+class Main {
+    //This file not used in APCS7 Multiple Choice
+    /**
 	 * @brief Read input, compute the answer, and write output
 	 *
 	 * @param args Command-line arguments
 	 */
-	public static void main(String[] args) {
-		System.out.println("Hello world!");
-	}
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+    }
 }

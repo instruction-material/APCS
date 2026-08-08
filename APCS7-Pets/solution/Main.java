@@ -1,52 +1,51 @@
 /**
  * @brief Solve the lesson problem using the provided input and output format
  */
-class Main
-{
-	/**
+class Main {
+    /**
 	 * @brief Read input, compute the answer, and write output
 	 *
 	 * @param args Command-line arguments
 	 */
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		// Pet genericPet = new Pet("Petey", true, 1, "John");
-		// System.out.println();
-		// genericPet.feed();
-		// genericPet.playWith();
+        // Pet genericPet = new Pet("Petey", true, 1, "John");
+        // System.out.println();
+        // genericPet.feed();
+        // genericPet.playWith();
 
-		Dog dog = new Dog("Fido", true, 3, "Robert");
-		Cat cat = new Cat("Felisha", false, 5, "Jillian");
-		Fish fish = new Fish("Ariel", false, 1, "Juan");
+        Dog dog = new Dog("Fido", true, 3, "Robert");
+        Cat cat = new Cat("Felisha", false, 5, "Jillian");
+        Fish fish = new Fish("Ariel", false, 1, "Juan");
 
-		System.out.println();
-		System.out.println(dog);
-		System.out.println(cat);
-		System.out.println(fish);
+        System.out.println();
+        System.out.println(dog);
+        System.out.println(cat);
+        System.out.println(fish);
 
-		//dog
-		System.out.println();
-		dog.feed();
-		dog.walk();
-		dog.rubBelly();
-		dog.playWith();
+        //dog
+        System.out.println();
+        dog.feed();
+        dog.walk();
+        dog.rubBelly();
+        dog.playWith();
 
-		//cat
-		System.out.println();
-		cat.feed();
-		cat.playWith();
-		cat.changeLitterbox();
-		cat.stroke();
-		cat.makeSound();
+        //cat
+        System.out.println();
+        cat.feed();
+        cat.playWith();
+        cat.changeLitterbox();
+        cat.stroke();
+        cat.makeSound();
 
-		//fish
-		System.out.println();
-		fish.feed();
-		fish.playWith();
-		fish.cleanTank();
+        //fish
+        System.out.println();
+        fish.feed();
+        fish.playWith();
+        fish.cleanTank();
 
-		System.out.println();
-		System.out.println("Does dog equal cat? " + dog.equals(cat));
-		System.out.println("Does fish equal fish? " + fish.equals(fish));
-	}
+        System.out.println();
+        System.out.println("Does dog equal cat? " + dog.equals(cat));
+        System.out.println("Does fish equal fish? " + fish.equals(fish));
+    }
 }

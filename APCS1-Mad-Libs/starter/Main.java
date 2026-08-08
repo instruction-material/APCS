@@ -1,7 +1,6 @@
-class Main
-{
-	public static void main(String[] args) {
-    /*
+class Main {
+    public static void main(String[] args) {
+        /*
 
     A vacation is when you take a trip to some _________ place
     with your _________ family. Usually you go to some place
@@ -32,11 +31,11 @@ class Main
     VERB ENDING IN “ING”
     NOUN PLANT
     PART OF THE BODY
-    A PLACE 
+    A PLACE
     VERB ENDING IN “ING”
     ADJECTIVE NUMBER
     PLURAL NOUN
-    
+
     */
-	}
+    }
 }
