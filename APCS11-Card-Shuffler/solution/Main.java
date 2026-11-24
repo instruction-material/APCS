@@ -1,44 +1,24 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
 class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
-    public static void main(String[] args) {
-
-        //create a complete suit of cards
-        ArrayList<Card> cards = new ArrayList<>();
-        for (int i = 1; i < 14; i++) {
-            cards.add(new Card("Hearts", i));
-        }
-
-        //1. print the cards before shuffling
-        System.out.println("\nBefore Shuffling:\n");
-        for (Card card : cards) {
-            System.out.println(card);
-        }
-
-        //2. shuffle the cards
-        Random random = new Random();
+    public static ArrayList<Card> shuffle(ArrayList<Card> cards, Random random) {
+        ArrayList<Card> remaining = new ArrayList<>(cards);
         ArrayList<Card> shuffled = new ArrayList<>();
-        while (cards.size() > 0) {
-            int index = random.nextInt(cards.size());
-            Card card = cards.get(index);
-            cards.remove(card);
-            shuffled.add(card);
+        while (!remaining.isEmpty()) {
+            int index = random.nextInt(remaining.size());
+            shuffled.add(remaining.remove(index));
         }
-        cards = shuffled;
+        return shuffled;
+    }
 
-        //3. print the cards after shuffling
-        System.out.println("\nAfter Shuffling:\n");
-        for (Card card : cards) {
-            System.out.println(card);
+    public static void main(String[] args) {
+        ArrayList<Card> cards = new ArrayList<>();
+        for (int rank = 1; rank <= 13; rank++) {
+            cards.add(new Card("Hearts", rank));
         }
+        ArrayList<Card> shuffled = shuffle(cards, new Random());
+        System.out.println("Original: " + cards);
+        System.out.println("Shuffled: " + shuffled);
     }
 }

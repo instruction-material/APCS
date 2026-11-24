@@ -1,17 +1,10 @@
 class Main {
     public static void main(String[] args) {
-        /*
-    System.out.println(f1(4));
-    System.out.println();
-
-    System.out.println(f2(3));
-    System.out.println();
-
-    f3("juni learning");
-    System.out.println("\n");
-
-    System.out.println(f4(15678));
-    */
+        System.out.println(f1(4));
+        System.out.println(f2(3));
+        f3("fern");
+        System.out.println();
+        System.out.println(f4(15678));
     }
 
     public static int f1(int n) {
