@@ -1,22 +1,77 @@
-class Main {
+public class Main {
     public static void main(String[] args) {
-        for (int i = 0; i < 10; i++) {
-            System.out.print(i);
-        }
+        System.out.println("Up for: " + upFor());
+        System.out.println("Up while: " + upWhile());
+        System.out.println("Down for: " + downFor());
+        System.out.println("Down while: " + downWhile());
+        System.out.println("Double for: " + doublingFor());
+        System.out.println("Double while: " + doublingWhile());
+        System.out.println("Break for: " + untilMultipleFor(1));
+        System.out.println("Break while: " + untilMultipleWhile(1));
+        System.out.println("Break from zero for: " + untilMultipleFor(0));
+        System.out.println("Break from zero while: " + untilMultipleWhile(0));
+    }
 
-        for (int j = 0; j > -10; j--) {
-            System.out.print(j);
+    static String upFor() {
+        String values = "";
+        for (int value = 0; value < 10; value++) {
+            values += value + " ";
         }
+        return values.trim();
+    }
 
-        for (int k = 1; k < 10; k *= 2) {
-            System.out.print(k);
+    static String upWhile() {
+        String values = "";
+        int value = 0;
+        while (value < 10) {
+            values += value + " ";
+            value++;
         }
+        return values.trim();
+    }
 
-        for (int l = 0; l != -1; l += 1) {
-            System.out.print(l);
-            if (l % 3 == 0) {
+    static String downFor() {
+        String values = "";
+        for (int value = 0; value > -10; value--) {
+            values += value + " ";
+        }
+        return values.trim();
+    }
+
+    static String downWhile() {
+        String values = "";
+        // Translate the down loop and append the same values.
+        return values.trim();
+    }
+
+    static String doublingFor() {
+        String values = "";
+        for (int value = 1; value < 10; value *= 2) {
+            values += value + " ";
+        }
+        return values.trim();
+    }
+
+    static String doublingWhile() {
+        String values = "";
+        // Translate the doubling loop and append the same values.
+        return values.trim();
+    }
+
+    static String untilMultipleFor(int start) {
+        String values = "";
+        for (int value = start; value < 10; value++) {
+            values += value + " ";
+            if (value % 3 == 0) {
                 break;
             }
         }
+        return values.trim();
+    }
+
+    static String untilMultipleWhile(int start) {
+        String values = "";
+        // Translate the untilMultiple loop and append the same values.
+        return values.trim();
     }
 }

@@ -1,13 +1,12 @@
 public class TestClass {
-
-    public String constructorArgument;
+    private final String constructorArgument;
 
     public TestClass(String argument) {
         constructorArgument = argument;
     }
 
     public String printAndReturnConstructorArgument() {
-        System.out.println(constructorArgument);
+        System.out.println("Stored: " + constructorArgument);
         return constructorArgument;
     }
 }

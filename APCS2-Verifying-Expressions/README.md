@@ -1,11 +1,5 @@
-# APCS2 Verifying Expressions
+# Verifying Expressions
 
-Canonical source repository: `APCS`
+Predict intermediate types, Boolean results, and a short-circuit outcome before running the program.
 
-This project consolidates the legacy `APCS2-Verifying-Expressions` and `APCS2-Verifying-Expressions-Starter` folders into the common course
-wrapper layout.
-
-## Structure
-
-- `starter/` contains the starter/template snapshot.
-- `solution/` contains the solution/reference snapshot.
+Open [starter](starter) to work on the exercise or [solution](solution) for the worked reference.

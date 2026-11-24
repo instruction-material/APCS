@@ -1,6 +1,5 @@
-# APCS5 Spreadsheet Width starter
+# Spreadsheet Width starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Run `javac Main.java && java Main` in this folder.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Complete `formatCell` in `Main.java`. Use ordinary text and a width from 0 through 20. Copy exact-width text, trim longer text to its first width characters, and append spaces to shorter text. The bars are displayed outside the requested width.

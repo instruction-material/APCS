@@ -1,56 +1,55 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        System.out.println("\n1 + 2 = " + sum(1, 2));
-        System.out.println("5! = " + factorial(5));
-        System.out.println("2^3 = " + exponent(2, 3));
-        System.out.println("Vowels in 'apple': " + numVowels("apple"));
-        System.out.println("Is 23 prime? " + isPrime(23));
+        System.out.println("Sum 1, 2: " + sum(1, 2));
+        System.out.println("Factorial 5: " + factorial(5));
+        System.out.println("Factorial 0: " + factorial(0));
+        System.out.println("Exponent 2, 3: " + exponent(2, 3));
+        System.out.println("Exponent -3, 0: " + exponent(-3, 0));
+        System.out.println("Vowels apple: " + numVowels("apple"));
+        System.out.println("Vowels IDEA: " + numVowels("IDEA"));
+        System.out.println("Prime 23: " + isPrime(23));
+        System.out.println("Prime 1: " + isPrime(1));
+        System.out.println("Prime 2: " + isPrime(2));
+        System.out.println("Prime 49: " + isPrime(49));
     }
 
-    public static int sum(int num1, int num2) {
-        return num1 + num2;
+    static int sum(int first, int second) {
+        return first + second;
     }
 
-    public static int factorial(int num) {
+    static int factorial(int number) {
         int result = 1;
-        for (int i = 1; i <= num; i++) {
-            result *= i;
+        for (int factor = 1; factor <= number; factor++) {
+            result *= factor;
         }
         return result;
     }
 
-    public static int exponent(int base, int power) {
+    static int exponent(int base, int power) {
         int result = 1;
-        for (int i = 1; i <= power; i++) {
+        for (int multiplication = 0; multiplication < power; multiplication++) {
             result *= base;
         }
         return result;
     }
 
-    public static int numVowels(String word) {
-        int result = 0;
-        for (int i = 0; i < word.length(); i++) {
-            if (word.charAt(i) == 'a' || word.charAt(i) == 'e' ||
-                word.charAt(i) == 'i' || word.charAt(i) == 'o' ||
-                word.charAt(i) == 'u') {
-                result++;
+    static int numVowels(String word) {
+        String vowels = "AEIOUaeiou";
+        int count = 0;
+        for (int index = 0; index < word.length(); index++) {
+            if (vowels.indexOf(word.charAt(index)) >= 0) {
+                count++;
             }
         }
-        return result;
+        return count;
     }
 
-    public static boolean isPrime(int num) {
-        for (int i = 2; i < num; i++) {
-            if (num % i == 0) {
+    static boolean isPrime(int number) {
+        if (number < 2) {
+            return false;
+        }
+        for (int candidate = 2; candidate <= number / candidate; candidate++) {
+            if (number % candidate == 0) {
                 return false;
             }
         }

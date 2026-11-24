@@ -1,61 +1,37 @@
 public class Store {
-    public int appleCost;
-    public int appleAmount;
-    public int pearCost;
-    public int pearAmount;
-    public int hoseCost;
-    public int hoseAmount;
+    private int appleAmount = 20;
+    private int pearAmount = 100;
+    private int hoseAmount = 15;
 
-    public int buy(String itemType, int amount) {
-        if (itemType.equals("apple")) {
-            if (amount <= appleAmount) {
-                appleAmount -= amount;
-                return amount * appleCost;
-            } else {
-                System.out.println("Sorry, we do not have enough in stock to "
-                                   + "complete your request");
-                return 0;
-            }
+    public int quantity(String item) {
+        if ("apple".equals(item)) {
+            return appleAmount;
         }
-
-        if (itemType.equals("pear")) {
-            if (amount <= pearAmount) {
-                pearAmount -= amount;
-                return amount * pearCost;
-            } else {
-                System.out.println("Sorry, we do not have enough in stock to "
-                                   + "complete your request");
-                return 0;
-            }
+        if ("pear".equals(item)) {
+            return pearAmount;
         }
-
-        if (itemType.equals("hose")) {
-            if (amount <= hoseAmount) {
-                hoseAmount -= amount;
-                return amount * hoseCost;
-            } else {
-                System.out.println("Sorry, we do not have enough in stock to "
-                                   + "complete your request");
-                return 0;
-            }
+        if ("hose".equals(item)) {
+            return hoseAmount;
         }
-
-        System.out.println("Sorry, we do not have that in stock");
         return 0;
     }
 
-    public void print() {
-        for (int i = 0; i < appleAmount; i++) {
-            System.out.print("Apple ");
+    public int buy(String item, int amount) {
+        if (amount <= 0) {
+            return 0;
         }
-        System.out.println();
-        for (int i = 0; i < pearAmount; i++) {
-            System.out.print("Pear ");
+        if ("apple".equals(item) && amount <= appleAmount) {
+            appleAmount -= amount;
+            return amount * 4;
         }
-        System.out.println();
-        for (int i = 0; i < hoseAmount; i++) {
-            System.out.print("Hose ");
+        if ("pear".equals(item) && amount <= pearAmount) {
+            pearAmount -= amount;
+            return amount * 7;
         }
-        System.out.println();
+        if ("hose".equals(item) && amount <= hoseAmount) {
+            hoseAmount -= amount;
+            return amount * 15;
+        }
+        return 0;
     }
 }

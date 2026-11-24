@@ -1,26 +1,16 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
         Store store = new Store();
-        store.appleAmount = 20; // we have 20 apples
-        store.appleCost = 4;
-        store.pearAmount = 100;
-        store.pearCost = 7;
-        store.hoseAmount = 15;
-        store.hoseCost = 15;
-
-        System.out.println("\nHere's the store's inventory:");
-        store.print();
-
-        System.out.println("\nBuying a pear!");
-        int amtDue = store.buy("pear", 5);
-        System.out.println("You owe $" + amtDue);
+        System.out.println("Initial pears: " + store.quantity("pear"));
+        System.out.println("Buy five pears: " + store.buy("pear", 5));
+        System.out.println("Pears left: " + store.quantity("pear"));
+        System.out.println("Buy too many pears: " + store.buy("pear", 96));
+        System.out.println("Buy a negative quantity: " + store.buy("pear", -1));
+        System.out.println("Buy unknown item: " + store.buy("x", 2));
+        System.out.println("Pears after rejected orders: " + store.quantity("pear"));
+        System.out.println("Buy remaining apples: " + store.buy("apple", 20));
+        System.out.println("Apples left: " + store.quantity("apple"));
+        System.out.println("Buy one hose: " + store.buy("hose", 1));
+        System.out.println("Hoses left: " + store.quantity("hose"));
     }
 }

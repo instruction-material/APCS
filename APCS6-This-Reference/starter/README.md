@@ -1,6 +1,5 @@
-# APCS6 This Reference starter
+# This Reference starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Run `javac Main.java Counter.java && java Main` in this folder.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Open `Counter.java` and `Main.java`. The one-argument constructor uses a parameter named `initialValue`. In the two-argument constructor assign the parameters `value` and `step` to `this.value` and `this.step`. Run both constructor calls and advance only the custom counter.

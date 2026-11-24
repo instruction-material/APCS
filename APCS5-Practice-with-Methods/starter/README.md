@@ -1,6 +1,5 @@
-# APCS5 Practice with Methods starter
+# Method Practice starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Run `javac Main.java && java Main` in this folder.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+The sum method is supplied. Complete `factorial`, `exponent`, `numVowels`, and `isPrime`, and compare each returned value with the calls in `main`. Use 0 through 12 for factorial, and powers 0 through 9 with bases -10 through 10. Count the letters A, E, I, O and U in either case.

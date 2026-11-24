@@ -1,47 +1,21 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        // 0. Define a double variable called forty with value 40.0
         double forty = 40.0;
+        System.out.println("1: " + (forty == 20));
+        System.out.println("2: " + (35 <= forty));
+        int whole = (int) forty;
+        System.out.println("3: " + whole);
+        System.out.println("4: " + (whole == forty));
 
-        // 1. Define a variable called one and set it equal to the value: forty == 20
-        boolean one = (forty == 20);
-        System.out.println(one); // false
+        double decimal = 35.5;
+        int narrowed = (int) decimal;
+        boolean same = decimal == narrowed;
+        System.out.println("5: " + same);
+        boolean copied = same;
+        System.out.println("6: " + copied);
+        System.out.println("7: " + (copied == same));
 
-        // 2. Define variable called two and set it equal to the value: 35 <= forty
-        boolean two = (35 <= forty);
-        System.out.println(two); // true
-
-        // 3. Define variable called three and set it equal to the value: (int) forty
-        int three = (int)forty;
-        System.out.println(three); // 40
-
-        // 4. Define variable called four and set it equal to the value: three == forty
-        boolean four = (three == forty);
-        System.out.println(four); // true;
-
-        // 5. Define a double variable called five and set it equal to the value: 35.5
-        double five = 35.5;
-        // Define an integer variable called six and set it equal to the value: (int) five
-        int six = (int)five;
-        // Define a boolean variable seven and set it equal to the value: five == six
-        boolean seven = (five == six);
-
-        System.out.println(seven); // false
-
-        // 6. Define a variable called eight and set it equal to the value: (boolean) seven
-        boolean eight = (boolean)seven;
-        System.out.println(eight); // false
-
-        // 7. Define a variable called nine and set it equal to the value: eight == seven
-        boolean nine = (eight == seven);
-        System.out.println(nine); // true
+        int divisor = 0;
+        System.out.println("8: " + (divisor != 0 && 40 / divisor > 2));
     }
 }

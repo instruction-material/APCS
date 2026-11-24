@@ -1,16 +1,11 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    int variable;
-    int otherVariable;
-
-    public Main(int var) {
-        variable = var; //last module
-    }
-
-    public Main(int variable, int otherVariable) {
-        this.variable = variable; //this module
-        this.otherVariable = otherVariable;
+public class Main {
+    public static void main(String[] args) {
+        Counter standard = new Counter(4);
+        Counter custom = new Counter(10, 3);
+        System.out.println("Standard start: " + standard.value());
+        System.out.println("Custom start: " + custom.value());
+        custom.advance();
+        System.out.println("Custom after one step: " + custom.value());
+        System.out.println("Standard after custom changes: " + standard.value());
     }
 }

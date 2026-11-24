@@ -1,14 +1,10 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        TestClass test = new TestClass("A String");
-        test.printAndReturnConstructorArgument();
+        TestClass first = new TestClass("Fern");
+        TestClass second = new TestClass("Moss");
+        String firstValue = first.printAndReturnConstructorArgument();
+        String secondValue = second.printAndReturnConstructorArgument();
+        System.out.println("First returned: " + firstValue);
+        System.out.println("Second returned: " + secondValue);
     }
 }

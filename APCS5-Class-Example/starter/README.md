@@ -1,6 +1,5 @@
-# APCS5 Class Example starter
+# Class Example starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Run `javac Main.java TestClass.java && java Main` in this folder.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Open `Main.java` and `TestClass.java`. Two objects receive different constructor arguments. Run the starter, then change `printAndReturnConstructorArgument` so that it returns the value from the field as well as printing it. Compare the two printed lines with the two returned values in `main`.

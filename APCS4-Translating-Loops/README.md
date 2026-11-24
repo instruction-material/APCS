@@ -1,11 +1,5 @@
-# APCS4 Translating Loops
+# Translating Loops
 
-Canonical source repository: `APCS`
+Translate four for loops to while loops and compare the full output of each pair.
 
-This project consolidates the legacy `APCS4-Translating-Loops` and `APCS4-Translating-Loops-Starter` folders into the common course wrapper
-layout.
-
-## Structure
-
-- `starter/` contains the starter/template snapshot.
-- `solution/` contains the solution/reference snapshot.
+Open [starter](starter) to work on the exercise or [solution](solution) for the worked reference.

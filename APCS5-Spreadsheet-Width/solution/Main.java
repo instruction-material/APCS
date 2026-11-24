@@ -1,30 +1,20 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
+        System.out.println(formatCell("potato", 5));
+        System.out.println(formatCell("pea", 5));
+        System.out.println(formatCell("apple", 5));
+        System.out.println(formatCell("", 3));
+        System.out.println(formatCell("pear", 0));
+    }
 
-        int width = 5;
-        String string = "potato";
-
-        String finalString = "|";
-        int length = string.length();
-
-        if (length < width) {
-            finalString += string;
-            for (int i = length; i < width; i++) {
-                finalString += " ";
-            }
-        } else {
-            finalString += string.substring(0, width);
+    static String formatCell(String text, int width) {
+        String display = text;
+        if (text.length() > width) {
+            display = text.substring(0, width);
         }
-
-        finalString += "|";
-        System.out.println(finalString);
+        for (int length = display.length(); length < width; length++) {
+            display += " ";
+        }
+        return "|" + display + "|";
     }
 }
