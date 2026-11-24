@@ -1,84 +1,92 @@
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.List;
 
-public class Elevens {
-    public Deck deck;
-    public Deck hand;
-    public Scanner in;
-
-    public Elevens(Deck start) {
-        this.deck = start;
-        ArrayList<Card> buildHand = new ArrayList<>();
-        for (int i = 0; i < 9; i++) {
-            int num = (int)(Math.random() * this.deck.size() - 1);
-            Card random = this.deck.remove(num);
-            buildHand.add(random);
-        }
-        this.hand = new Deck(buildHand);
-        this.in = new Scanner(System.in);
-        play();
+public final class Elevens {
+    public enum Status {
+        PLAYING, WON, STUCK
     }
 
-    public void play() {
-        System.out.println(
-            "\nRULES: \nWin by emptying the deck your hand draws from. "
-            + "Select groups of cards that sum to 11 or a set of a Jack, a "
-            + "Queen, and a King. \n\nInput a single moves worth of card "
-            + "selections in the form Num Suit where num refers to the value "
-            + "with a comma between cards (Ex. \"Ace of Hearts\" and \"2 of "
-            + "Clubs\" is: 1 Hearts, 2 Clubs).\n\nEnter quit to end.\n");
+    private static final int HAND_SIZE = 9;
+    private final Deck stock;
+    private final ArrayList<Card> hand = new ArrayList<>();
 
-        System.out.println(this.hand);
-        String input = in.nextLine();
-        while (this.deck.size() > 0 && !input.equals("quit")) {
-            String[] arr = input.split(",");
-            if (arr.length == 1) {
-                System.out.println("You must input more than one card.");
-                input = in.nextLine();
-                continue;
-            }
-            ArrayList<Card> currentMove = new ArrayList<>();
-            for (String s : arr) {
-                String[] internal = s.split(" ");
-                String n = internal[0];
-                String type = internal[1];
-                if (internal.length == 3) {
-                    n = internal[1];
-                    type = internal[2];
-                }
-                int number = Integer.parseInt(n);
-                Card c = new Card(type, number);
-                currentMove.add(c);
-            }
-            int num = 0;
-            int removed = 0;
-            if (isLegal(currentMove)) {
-                for (Card c : currentMove) {
-                    this.hand.remove(c);
-                    removed++;
-                }
-            }
-            for (int i = 0; i < removed; i++) {
-                if (this.deck.size() > removed + 1) {
-                    num = (int)(Math.random() * this.deck.size() - 1);
-                    Card random = this.deck.remove(num);
-                    this.hand.add(random);
-                } else {
-                    System.out.println("You won");
-                    return;
-                }
-            }
-            System.out.println(this.hand);
-            System.out.println("Input your move or quit.");
-            input = in.nextLine();
-        }
+    public Elevens(Deck stock) {
+        this.stock = stock;
+        refill();
     }
 
-    public boolean isLegal(ArrayList<Card> attempt) {
-        int num = 0;
-        for (Card c : attempt) {
-            num += c.getNumber();
+    public List<Card> getHand() {
+        return List.copyOf(hand);
+    }
+
+    public int getStockSize() {
+        return stock.size();
+    }
+
+    public boolean isLegal(int... slots) {
+        if (slots.length < 2 || slots.length > 3) {
+            return false;
         }
-        return num == 11 || num == 36;
+        int[] sorted = slots.clone();
+        Arrays.sort(sorted);
+        for (int i = 0; i < sorted.length; i++) {
+            if (sorted[i] < 0 || sorted[i] >= hand.size()) {
+                return false;
+            }
+            if (i > 0 && sorted[i] == sorted[i - 1]) {
+                return false;
+            }
+        }
+        int first = hand.get(sorted[0]).getRank();
+        int second = hand.get(sorted[1]).getRank();
+        if (sorted.length == 2) {
+            return first + second == 11;
+        }
+        int third = hand.get(sorted[2]).getRank();
+        return first >= 11 && second >= 11 && third >= 11
+            && first != second && first != third && second != third;
+    }
+
+    public boolean play(int... slots) {
+        if (!isLegal(slots)) {
+            return false;
+        }
+        int[] sorted = slots.clone();
+        Arrays.sort(sorted);
+        for (int i = sorted.length - 1; i >= 0; i--) {
+            hand.remove(sorted[i]);
+        }
+        refill();
+        return true;
+    }
+
+    public Status status() {
+        if (hand.isEmpty() && stock.size() == 0) {
+            return Status.WON;
+        }
+        return hasMove() ? Status.PLAYING : Status.STUCK;
+    }
+
+    private boolean hasMove() {
+        for (int a = 0; a < hand.size(); a++) {
+            for (int b = a + 1; b < hand.size(); b++) {
+                if (isLegal(a, b)) {
+                    return true;
+                }
+                for (int c = b + 1; c < hand.size(); c++) {
+                    if (isLegal(a, b, c)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    private void refill() {
+        while (hand.size() < HAND_SIZE && stock.size() > 0) {
+            hand.add(stock.draw());
+        }
     }
 }

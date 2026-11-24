@@ -1,6 +1,11 @@
-# APCS Check in 4 Additional Practice Project starter
+# Counting Inversions
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+An inversion is a pair of positions where the earlier value is greater than the later value. Compare pair counting, insertion sort shifts, and merge sort. Count an entire remaining left segment when a smaller right value is selected. Keep equal values out of the count.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Complete the marked tasks before comparing with the reference.
+
+Compile with `javac Main.java` on JDK 17 or later, then run `java Main`.
+
+## Checks
+
+All methods should return 4 for [3, 1, 2, 1] and 6 for [4, 3, 2, 1]. Empty, sorted and all-equal arrays give zero. Pair counting leaves its input alone. The sorting methods leave their arrays in ascending order.

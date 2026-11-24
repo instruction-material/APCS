@@ -1,37 +1,27 @@
-public class Card {
-    Suit type;  //diamonds>hearts>spades>clubs
-    int number; //Ace = 0, J = 11, Q = 12, K = 13
+import java.util.Objects;
 
-    public Card(String type, int number) {
-        this.type = new Suit(type);
-        this.number = number;
-    }
+public final class Card {
+    private final int rank;
+    private final Suit suit;
 
-    public int getNumber() {
-        return this.number;
-    }
-
-    public int greaterThan(Card other) {
-        if (other.number == this.number) {
-            return this.type.compareTo(other.type);
+    public Card(int rank, Suit suit) {
+        if (rank < 1 || rank > 13) {
+            throw new IllegalArgumentException("Rank must be 1 through 13.");
         }
-        return this.number - other.number;
+        this.rank = rank;
+        this.suit = Objects.requireNonNull(suit);
+    }
+
+    public int getRank() {
+        return rank;
+    }
+
+    public Suit getSuit() {
+        return suit;
     }
 
     @Override
     public String toString() {
-        return number + " of " + type;
-    }
-
-    @Override
-    public boolean equals(Object other) {
-        if (other == null) {
-            return false;
-        }
-        if (other instanceof Card) {
-            Card o = (Card)other;
-            return this.type.equals(o.type) && this.number == o.number;
-        }
-        return false;
+        return rank + " " + suit;
     }
 }

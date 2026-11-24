@@ -1,22 +1,14 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-
-        System.out.println("\nMaking two towers");
-        Tower one = new Tower(5);
-        Tower two = new Tower(5);
-
-        System.out.println("Sending message\n");
-        Message m = new Message("We meet at midnight");
-
-        one.transmit(m);
-        two.recieve(m);
+        Tower sender = new Tower(5);
+        Tower matching = new Tower(5);
+        Tower different = new Tower(2);
+        Message original = new Message("Az za! 2");
+        Message encoded = sender.transmit(original);
+        System.out.println("Original: " + original);
+        System.out.println("Encoded: " + encoded);
+        System.out.println("Matching receiver: " + matching.receive(encoded));
+        System.out.println("Different receiver: " + different.receive(encoded));
+        System.out.println("Encoded remains: " + encoded);
     }
 }

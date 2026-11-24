@@ -1,28 +1,26 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        drawLine(5);
-        // drawLineBad(5);
-    }
-
-    public static void drawLineBad(int n) {
-        System.out.print("-");
-        drawLine(n - 1);
-    }
-
-    public static void drawLine(int n) {
-        if (n == 0) {
-            System.out.println("That's all folks!");
-        } else {
-            System.out.print("-");
-            drawLine(n - 1);
+        int value = 3;
+        for (int step = 0; step < 4; step++) {
+            System.out.println("Incorrect call: " + value);
+            value++;
         }
+        System.out.println("Length 3: " + drawLine(3));
+        System.out.println("Length 0: " + drawLine(0));
+        System.out.println("Length 21: " + drawLine(21));
+    }
+
+    public static String drawLine(int length) {
+        if (length < 0 || length > 20) {
+            return "Length out of range";
+        }
+        return render(length);
+    }
+
+    private static String render(int remaining) {
+        if (remaining == 0) {
+            return "Done";
+        }
+        return "-" + render(remaining - 1);
     }
 }

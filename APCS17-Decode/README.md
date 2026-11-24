@@ -1,11 +1,5 @@
-# APCS17 Decode
+# Decode Tower Messages
 
-Canonical source repository: `APCS`
+Model two towers exchanging a message in memory. Shift only ASCII A–Z and a–z, within their own alphabets. Copy all other characters. Return new Message objects so transmitting and receiving do not alter earlier messages. Normalize shifts modulo 26.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+The two roles use the same task and examples.

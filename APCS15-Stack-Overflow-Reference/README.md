@@ -1,11 +1,5 @@
-# APCS15 Stack Overflow Reference
+# Tracing a Recursive Base Case
 
-Canonical source repository: `APCS`
+The goal is a line of dashes followed by Done for lengths from 0 through 20. Trace the first four inputs an incorrect recursive call would visit if it increased the input. The demonstration records these inputs with a loop and never runs the unbounded recursion.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+The two roles use the same task and examples.

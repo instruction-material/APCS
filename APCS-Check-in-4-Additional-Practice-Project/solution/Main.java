@@ -1,101 +1,80 @@
-import java.util.ArrayList;
-
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        ArrayList<Integer> nums1 = new ArrayList();
-        ArrayList<Integer> nums2 = new ArrayList();
-        for (int i = 0; i < 20; i++) {
-            int num = (int)(Math.random() * i) + 1;
-            nums1.add(num);
-            nums2.add(num);
-        }
-        System.out.println("\nUnsorted Array:\n" + nums1);
-
-        //insertionSort
-        int result = insertionSortInversions(nums1);
-        System.out.println("\nInsertionSort Inversions: " + result);
-
-        //mergeSort
-        result = mergeSortInversions(nums2);
-        System.out.println("MergeSort Inversions: " + result);
+        show(new int[] {3, 1, 2, 1});
+        show(new int[] {1, 2, 3});
+        show(new int[] {4, 3, 2, 1});
+        show(new int[0]);
     }
 
-    public static int insertionSortInversions(ArrayList<Integer> nums) {
-
-        int n = 0;
-
-        for (int i = 1; i < nums.size(); i++) {
-
-            //get the item to insert
-            int itemToInsert = nums.get(i);
-            int insertIndex = i;
-
-            //shift the items right until it's ready to insert
-            while (insertIndex > 0 &&
-                   itemToInsert < nums.get(insertIndex - 1)) {
-                nums.set(insertIndex, nums.get(insertIndex - 1));
-                insertIndex--;
-                n++;
+    public static long pairCount(int[] values) {
+        long count = 0;
+        for (int i = 0; i < values.length; i++) {
+            for (int j = i + 1; j < values.length; j++) {
+                if (values[i] > values[j]) {
+                    count++;
+                }
             }
-            //insert the item
-            nums.set(insertIndex, itemToInsert);
         }
-        return n;
+        return count;
     }
 
-    public static int mergeSortInversions(ArrayList<Integer> nums) {
+    public static long insertionSortInversions(int[] values) {
+        long count = 0;
+        for (int i = 1; i < values.length; i++) {
+            int saved = values[i];
+            int spot = i;
+            while (spot > 0 && values[spot - 1] > saved) {
+                values[spot] = values[spot - 1];
+                spot--;
+                count++;
+            }
+            values[spot] = saved;
+        }
+        return count;
+    }
 
-        //base case
-        if (nums.size() <= 1) {
+    public static long mergeSortInversions(int[] values) {
+        return sort(values, new int[values.length], 0, values.length);
+    }
+
+    private static long sort(int[] values, int[] scratch, int start, int end) {
+        if (end - start < 2) {
             return 0;
         }
-
-        //split in half
-        int M = nums.size() / 2;
-        ArrayList<Integer> left = new ArrayList(nums.subList(0, M));
-        ArrayList<Integer> right = new ArrayList(nums.subList(M, nums.size()));
-
-        // sort the two halves
-        int n = mergeSortInversions(left) + mergeSortInversions(right);
-
-        // merge the two halves
-        int i = 0;
-        int j = 0;
-        ArrayList<Integer> result = new ArrayList<>();
-        while (i < left.size() && j < right.size()) {
-            if (left.get(i).compareTo(right.get(j)) <= 0) {
-                //add from the left
-                result.add(left.get(i));
-                i += 1;
-                n += j; // add "j" inversions
-                // we do this because "j" elements in the right list were smaller than this element
+        int mid = start + (end - start) / 2;
+        long count = sort(values, scratch, start, mid);
+        count += sort(values, scratch, mid, end);
+        int left = start;
+        int right = mid;
+        for (int i = start; i < end; i++) {
+            if (right == end || (left < mid && values[left] <= values[right])) {
+                scratch[i] = values[left];
+                left++;
             } else {
-                //add from the right
-                result.add(right.get(j));
-                j += 1;
+                scratch[i] = values[right];
+                right++;
+                count += mid - left;
             }
         }
-
-        // add the inversions for the remaining items in "left"
-        n += (left.size() - i) * right.size();
-        // right.size() elements were smaller than each item remaining in "left"
-
-        result.addAll(left.subList(i, left.size()));
-        result.addAll(right.subList(j, right.size()));
-
-        //set the original arrayList to the values in the result
-        for (int k = 0; k < result.size(); k += 1) {
-            nums.set(k, result.get(k));
+        for (int i = start; i < end; i++) {
+            values[i] = scratch[i];
         }
+        return count;
+    }
 
-        return n;
+    private static int[] copy(int[] values) {
+        int[] result = new int[values.length];
+        for (int i = 0; i < values.length; i++) {
+            result[i] = values[i];
+        }
+        return result;
+    }
+
+    private static void show(int[] values) {
+        int[] insertion = copy(values);
+        int[] merge = copy(values);
+        System.out.println("Pairs: " + pairCount(values));
+        System.out.println("Shifts: " + insertionSortInversions(insertion));
+        System.out.println("Merge: " + mergeSortInversions(merge));
     }
 }

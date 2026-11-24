@@ -1,32 +1,32 @@
 public class Message {
-    private String message;
+    private final String text;
 
-    public Message(String message) {
-        this.message = message;
+    public Message(String text) {
+        this.text = text;
     }
 
-    public void encrypt(int num) {
-        char[] letters = this.message.toCharArray();
-        int index = 0;
-        for (char c : letters) {
-            letters[index] += num;
-            index++;
+    public Message shift(int distance) {
+        int offset = Math.floorMod(distance, 26);
+        StringBuilder shifted = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            char letter = text.charAt(i);
+            if (letter >= 'A' && letter <= 'Z') {
+                shifted.append(shiftLetter(letter, 'A', offset));
+            } else if (letter >= 'a' && letter <= 'z') {
+                shifted.append(shiftLetter(letter, 'a', offset));
+            } else {
+                shifted.append(letter);
+            }
         }
-        this.message = String.valueOf(letters);
+        return new Message(shifted.toString());
     }
 
-    public void decrypt(int num) {
-        char[] letters = message.toCharArray();
-        int index = 0;
-        for (char c : letters) {
-            letters[index] -= num;
-            index++;
-        }
-        this.message = String.valueOf(letters);
+    private static char shiftLetter(char letter, char base, int offset) {
+        return (char) (base + (letter - base + offset) % 26);
     }
 
     @Override
     public String toString() {
-        return this.message;
+        return text;
     }
 }

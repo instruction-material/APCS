@@ -1,19 +1,15 @@
 public class Tower {
-    private int num;
+    private final int key;
 
-    public Tower(int num) {
-        this.num = num;
+    public Tower(int key) {
+        this.key = Math.floorMod(key, 26);
     }
 
     public Message transmit(Message message) {
-        message.encrypt(this.num);
-        System.out.println("Encrypted: " + message);
-        return message;
+        return message.shift(key);
     }
 
-    public Message recieve(Message message) {
-        message.decrypt(this.num);
-        System.out.println("Decrypted: " + message);
-        return message;
+    public Message receive(Message message) {
+        return message.shift(-key);
     }
 }
