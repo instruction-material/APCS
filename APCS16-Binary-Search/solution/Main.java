@@ -1,78 +1,50 @@
-import java.util.Arrays;
-import java.util.Random;
-
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    private static final int SIZE = 15;
-
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
+        int[] sorted = {-6, -1, 2, 2, 5, 9, 14};
+        compare(-6, sorted);
+        compare(2, sorted);
+        compare(14, sorted);
+        compare(7, sorted);
+        compare(7, new int[0]);
+    }
 
-        Random random = new Random();
-        int[] data = new int[SIZE];
-        for (int i = 0; i < SIZE; i++) {
-            data[i] = random.nextInt(100);
+    private static void compare(int target, int[] data) {
+        boolean recursive = binaryRecursive(target, data, 0, data.length - 1);
+        boolean iterative = binaryIterative(target, data);
+        if (recursive != iterative) {
+            throw new IllegalStateException("Search versions disagree for " + target);
         }
-        Arrays.sort(data);
-        System.out.println("\n" + Arrays.toString(data));
-
-        System.out.print("Is " + data[0] + " in the array? ");
-        System.out.println(binaryIterative(data[0], data));
-
-        System.out.print("Is " + data[SIZE / 2] + " in the array? ");
-        System.out.println(binaryRecursive(data[SIZE / 2], data, 0, SIZE - 1));
-
-        System.out.print("Is " + 200 + " in the array? ");
-        System.out.println(binaryRecursive(50, data, 0, SIZE - 1));
+        System.out.println("target " + target + " => " + recursive);
     }
 
     public static boolean binaryIterative(int target, int[] data) {
         int lo = 0;
         int hi = data.length - 1;
         while (lo <= hi) {
-            int mid = (lo + hi) / 2;
-            if (target == data[mid]) {
-                //found it!
+            int mid = lo + (hi - lo) / 2;
+            if (data[mid] == target) {
                 return true;
-            } else if (target < data[mid]) {
-                //search in bottom half
+            }
+            if (target < data[mid]) {
                 hi = mid - 1;
-            } else if (target > data[mid]) {
-                //search in top half
+            } else {
                 lo = mid + 1;
             }
         }
-        // target isn't in the list
         return false;
     }
 
-    public static boolean binaryRecursive(int target, int[] data, int lo,
-                                          int hi) {
-
-        //base case
+    public static boolean binaryRecursive(int target, int[] data, int lo, int hi) {
         if (lo > hi) {
             return false;
         }
-
-        //recursive step
-        int mid = (lo + hi) / 2;
-        if (target == data[mid]) {
-            //found it!
+        int mid = lo + (hi - lo) / 2;
+        if (data[mid] == target) {
             return true;
-        } else if (target < data[mid]) {
-            //search in bottom half
-            return binaryRecursive(target, data, lo, mid - 1);
-        } else if (target > data[mid]) {
-            //search in top half
-            return binaryRecursive(target, data, mid + 1, hi);
         }
-        //unreachable statement
-        return false;
+        if (target < data[mid]) {
+            return binaryRecursive(target, data, lo, mid - 1);
+        }
+        return binaryRecursive(target, data, mid + 1, hi);
     }
 }

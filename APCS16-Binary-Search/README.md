@@ -1,11 +1,5 @@
 # APCS16 Binary Search
 
-Canonical source repository: `APCS`
+Work with ascending data and inclusive search bounds. The starter contains a complete recursive method for tracing and an unfinished iterative extension. The reference runs both methods on the same fixed inputs.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+The original migrated example used random inputs. The fixed inputs make the learner and reference runs comparable and ensure each displayed target matches the argument passed to the search.
