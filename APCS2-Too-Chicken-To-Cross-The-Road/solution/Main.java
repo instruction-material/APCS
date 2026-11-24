@@ -1,42 +1,18 @@
 import java.util.Scanner;
 
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("\nCan the chicken cross the road?");
-        System.out.println("Enter \"true\" or \"false\" to the following "
-                           + "questions to find out!");
+        Scanner input = new Scanner(System.in);
+        boolean safeLeft = input.nextBoolean();
+        boolean safeRight = input.nextBoolean();
+        boolean scared = input.nextBoolean();
+        boolean hasCompanion = input.nextBoolean();
+        System.out.println(canCross(safeLeft, safeRight, scared, hasCompanion));
+    }
 
-        //get user input
-        System.out.print("\nIs it safe to the left? ");
-        boolean safeLeft = scanner.nextBoolean();
-
-        System.out.print("Is it safe to the right? ");
-        boolean safeRight = scanner.nextBoolean();
-
-        System.out.print("Is he scared? ");
-        boolean isScared = scanner.nextBoolean();
-
-        System.out.print("Is his mother hen there? ");
-        boolean hasHen = scanner.nextBoolean();
-
-        // determine the answer:
-        boolean canCross = safeLeft && safeRight && (!isScared || hasHen);
-        System.out.println(canCross);
-
-        /*
-    Alternative solution:
-    boolean isSafeBothWays = safeLeft && safeRight;
-    boolean isConfident = !isScared || hasHen;
-    boolean canCross = isSafeBothWays && isConfident;
-    */
+    static boolean canCross(boolean safeLeft, boolean safeRight, boolean scared, boolean hasCompanion) {
+        boolean clearBothWays = safeLeft && safeRight;
+        boolean ready = !scared || hasCompanion;
+        return clearBothWays && ready;
     }
 }

@@ -1,11 +1,5 @@
-# APCS3 Math Package Reference
+# Math package reference
 
-Canonical source repository: `APCS`
+Call static Math methods and keep track of the type returned by each call.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Open the starter to work through the examples. Use the reference to compare results.

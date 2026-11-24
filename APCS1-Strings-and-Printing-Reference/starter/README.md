@@ -1,6 +1,7 @@
-# APCS1 Strings and Printing Reference starter
+# Strings and printing starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Run `javac Main.java && java Main`.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Trace the current line after each call. Use print to keep a label and a value together, and println to finish a line. Then add a title and a value of your choice.
+
+Name: Fern and Score: 4 appear on separate lines. The newline escape in one string prints First line and Second line separately. The quotation marks around Ready appear in the output.

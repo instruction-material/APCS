@@ -1,6 +1,7 @@
-# APCS3 Too Chicken Take Two starter
+# Too Chicken Take Two starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Run `javac Main.java && java Main`.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+The left-side check is supplied. Trace it before adding a nested condition for the right side, then the branches for an unafraid or accompanied character.
+
+With both directions clear, true true false false crosses alone, true true true true crosses with a companion, and true true true false waits. If both directions are blocked, the left message comes first.

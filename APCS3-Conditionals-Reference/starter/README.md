@@ -1,6 +1,7 @@
-# APCS3 Conditionals Reference starter
+# Conditionals reference starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Run `javac Main.java && java Main`.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Predict the branches for each driver call. Then add a sample just above capacity and trace why the nested condition is reached only in the final branch.
+
+For 9 reservations, seats are available. For 10, the session is full. Count 11 triggers one extra seat, and count 12 triggers multiple extra seats. Use nonnegative counts.

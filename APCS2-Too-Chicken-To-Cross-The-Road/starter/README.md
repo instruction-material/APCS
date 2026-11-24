@@ -1,6 +1,7 @@
-# APCS2 Too Chicken To Cross The Road starter
+# Too Chicken to Cross the Road starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Run `javac Main.java && java Main`.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Read four flags in order: left route clear, right route clear, scared, and companion present. Combine the two safety flags with the rule that the character is either unafraid or accompanied. Replace the starter's false result with a Boolean expression.
+
+Use four true or false tokens. For true true true false, the result is false. Adding a companion makes it true. With either direction blocked, the result remains false.

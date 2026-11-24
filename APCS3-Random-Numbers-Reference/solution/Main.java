@@ -1,23 +1,17 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        boolean smallNum = Math.random();
-        System.out.println(smallNum);
+        System.out.println("0 through 9, first: " + fromDraw(0.0, 0, 9));
+        System.out.println("1 through 10, last: " + fromDraw(0.9999, 1, 10));
+        System.out.println("99 through 199, first: " + fromDraw(0.0, 99, 199));
+        System.out.println("99 through 199, last: " + fromDraw(0.9999, 99, 199));
+    }
 
-        double zeroToTen = Math.random() * 10;
-        System.out.println(zeroToTen);
+    static int fromDraw(double draw, int low, int high) {
+        int count = high - low + 1;
+        return low + (int) (draw * count);
+    }
 
-        int zeroToTwenty = (int)(Math.random() * 10);
-        System.out.println(zeroToTwenty);
-
-        int fourToNinety = (int)((90 - 5) * Math.random()) + 5;
-        System.out.println(fourToNinety);
+    static int randomInRange(int low, int high) {
+        return fromDraw(Math.random(), low, high);
     }
 }

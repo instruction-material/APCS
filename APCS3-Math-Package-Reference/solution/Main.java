@@ -1,17 +1,14 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        int absolute = Math.abs(-3);
-        System.out.println(absolute);
-        double raised = Math.pow(absolute, 2);
-        double root = Math.sqrt(raised);
-        System.out.println(root);
+        int distance = Math.abs(-9);
+        double square = Math.pow(3, 2);
+        double root = Math.sqrt(15);
+        System.out.println("Absolute: " + distance);
+        System.out.println("Square: " + square);
+        System.out.println("Root: " + root);
+        int truncated = (int) root;
+        long rounded = Math.round(root);
+        System.out.println("Cast: " + truncated);
+        System.out.println("Rounded: " + rounded);
     }
 }
