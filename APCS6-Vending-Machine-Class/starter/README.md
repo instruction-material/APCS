@@ -1,6 +1,7 @@
-# APCS6 Vending Machine Class starter
+# Vending machine class starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Run `javac *.java && java Main`.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Main loads and vends five of each item. Follow the completed peanut methods, then complete the pretzel and candy setters and vend methods. Leave the supplied getters in place.
+
+Stock begins at 3 peanuts, 8 pretzels, and 20 candy. The two rejected candy changes, −1 and 101, leave it at 20. After five rounds, the counts are 0, 3, and 15. Check 0 and 100 as accepted quantities, and call vend while empty.

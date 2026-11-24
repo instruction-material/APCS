@@ -1,44 +1,25 @@
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.List;
 
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        int size = 10;
-        ArrayList<Integer> nums = new ArrayList<>();
-        Random random = new Random();
-
-        //add random numbers
-        for (int i = 0; i < size; i++) {
-            nums.add(random.nextInt(100));
-        }
-
-        System.out.println("\nUnsorted: " + nums);
-        selectionSort(nums);
-        System.out.println("Sorted: " + nums);
+        ArrayList<Integer> values = new ArrayList<>(List.of(5, -1, 2, -1, 0));
+        System.out.println("Before: " + values);
+        selectionSort(values);
+        System.out.println("After: " + values);
     }
 
-    public static void selectionSort(ArrayList<Integer> nums) {
-        for (int i = 0; i < nums.size(); i++) {
-            //1. find the next smallest
-            int minIndex = i;
-            for (int j = i; j < nums.size(); j++) {
-                if (nums.get(j) < nums.get(minIndex)) {
-                    minIndex = j;
+    public static void selectionSort(ArrayList<Integer> values) {
+        for (int i = 0; i < values.size() - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < values.size(); j++) {
+                if (values.get(j) < values.get(min)) {
+                    min = j;
                 }
             }
-            //2. swap to the end of the sorted section
-            int min = nums.get(minIndex);
-            int temp = nums.get(i);
-            nums.set(i, min);
-            nums.set(minIndex, temp);
+            int first = values.get(i);
+            values.set(i, values.get(min));
+            values.set(min, first);
         }
     }
 }

@@ -1,45 +1,24 @@
 import java.util.ArrayList;
 
 public class Room {
-    ArrayList<Passenger> passengers;
+    private final ArrayList<Passenger> passengers = new ArrayList<>();
 
-    public Room(ArrayList<Passenger> people) {
-        this.passengers = people;
-    }
-
-    public Room() {
-        this.passengers = new ArrayList<>();
-    }
-
-    public void addPassenger(Passenger person) {
-        this.passengers.add(person);
-    }
-
-    public boolean removePassenger(Passenger person) {
-        int loc = 0;
-        while (loc < this.passengers.size()) {
-            if (this.passengers.get(loc).equals(person)) {
-                this.passengers.remove(loc);
-                return true;
-            }
-            loc++;
+    public void addPassenger(Passenger item) {
+        if (item != null) {
+            passengers.add(item);
         }
-        return false;
     }
 
-    @Override
-    public boolean equals(Object other) {
-        if (other == null) {
-            return false;
-        } else if (!(other instanceof Room)) {
-            return false;
-        }
-        Room otherR = (Room)other;
-        return this.passengers.equals(otherR.passengers);
+    public boolean removePassenger(Passenger item) {
+        return passengers.remove(item);
+    }
+
+    public int size() {
+        return passengers.size();
     }
 
     @Override
     public String toString() {
-        return "Room: " + this.passengers.toString() + "\n";
+        return "Room (" + size() + "): " + passengers;
     }
 }

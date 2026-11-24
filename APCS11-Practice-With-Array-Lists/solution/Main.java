@@ -1,108 +1,65 @@
 import java.util.ArrayList;
+import java.util.List;
 
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-
-        ArrayList<Integer> nums = new ArrayList<>();
-        ArrayList<Double> decimalNums = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            nums.add((int)(Math.random() * 100));
-            decimalNums.add(Math.random() * 10 - 5);
-        }
-
-        System.out.println("\nNumbers: " + nums);
-        System.out.println("# of evens in the list: " + numEvens(nums));
-        System.out.println("Sum of the numbers: " + sum(nums));
-
-        ArrayList<String> words = new ArrayList<>();
-        words.add("class");
-        words.add("apple");
-        words.add("teacher");
-        System.out.println("\nList of words: " + words);
-        System.out.println("Words that start with A: " + startsWithA(words));
-
-        System.out.println("\nDecimal Numbers: " + decimalNums);
-        replaceNums(decimalNums);
-        System.out.println("Replaced Decimals: " + decimalNums);
-
-        System.out.println("\nNumbers: " + nums);
-        System.out.println("Removing Last Even Number... ");
-        removeLastEven(nums);
-        System.out.println("Numbers: " + nums);
+        ArrayList<Integer> numbers = new ArrayList<>(List.of(3, 2, 5, 2, 7));
+        ArrayList<String> words = new ArrayList<>(List.of("", "apple", "class", "ant"));
+        ArrayList<Double> decimals = new ArrayList<>(List.of(-2.5, 0.0, 6.5));
+        System.out.println("Even count: " + numEvens(numbers));
+        System.out.println("Sum: " + sum(numbers));
+        System.out.println("Starts with a: " + startsWithA(words));
+        replaceNums(decimals);
+        System.out.println("Signs: " + decimals);
+        removeLastEven(numbers);
+        System.out.println("After removal: " + numbers);
     }
 
-    // 1. Write a method that takes in an ArrayList of integers and returns the number of even numbers in the list.
-    public static int numEvens(ArrayList<Integer> nums) {
+    public static int numEvens(ArrayList<Integer> numbers) {
         int count = 0;
-        for (int i = 0; i < nums.size(); i++) {
-            if (nums.get(i) % 2 == 0) {
+        for (int number : numbers) {
+            if (number % 2 == 0) {
                 count++;
             }
         }
         return count;
     }
 
-    // 2. Write a method that takes in an ArrayList of integers and returns the sum of the list.
-    public static int sum(ArrayList<Integer> nums) {
-        int sum = 0;
-        for (int i = 0; i < nums.size(); i++) {
-            sum += nums.get(i);
+    public static int sum(ArrayList<Integer> numbers) {
+        int total = 0;
+        for (int number : numbers) {
+            total += number;
         }
-        return sum;
+        return total;
     }
 
-    // 3.  Write a method that takes in an ArrayList of words and returns an ArrayList of only the words that start with the letter 'a.'
     public static ArrayList<String> startsWithA(ArrayList<String> words) {
-        ArrayList<String> result = new ArrayList<String>();
-        for (int i = 0; i < words.size(); i++) {
-            if (words.get(i).charAt(0) == 'a') {
-                result.add(words.get(i));
+        ArrayList<String> result = new ArrayList<>();
+        for (String word : words) {
+            if (!word.isEmpty() && word.charAt(0) == 'a') {
+                result.add(word);
             }
         }
         return result;
     }
 
-    // 4. Write a method that takes in an ArrayList of doubles and edits the elements in the ArrayList so that negative numbers are replaced with -1.0 and positive numbers are replaced with 1.0.
-    public static void replaceNums(ArrayList<Double> nums) {
-        for (int i = 0; i < nums.size(); i++) {
-            if (nums.get(i) < 0) {
-                nums.set(i, -1.0);
-            } else if (nums.get(i) > 0) {
-                nums.set(i, 1.0);
+    public static void replaceNums(ArrayList<Double> numbers) {
+        for (int i = 0; i < numbers.size(); i++) {
+            double value = numbers.get(i);
+            if (value < 0) {
+                numbers.set(i, -1.0);
+            } else if (value > 0) {
+                numbers.set(i, 1.0);
             }
         }
     }
 
-    // 5. Write a method that takes in an ArrayList of integers and removes the very last even number in the ArrayList.
-    public static void removeLastEven(ArrayList<Integer> nums) {
-        // Method 1: loop from the end towards the beginning
-        for (int i = nums.size() - 1; i >= 0; i--) {
-            if (nums.get(i) % 2 == 0) {
-                nums.remove(i);
-                break; // or return
+    public static void removeLastEven(ArrayList<Integer> numbers) {
+        for (int i = numbers.size() - 1; i >= 0; i--) {
+            if (numbers.get(i) % 2 == 0) {
+                numbers.remove(i);
+                return;
             }
         }
-
-        /*
-    // Method 2: loop from the beginning towards the end, store the last seen even index
-    int evenI = -1;
-    for (int i = 0; i < nums.size(); i++) {
-      if (nums.get(i) % 2 == 0) {
-        evenI = i;
-      }
-    }
-
-    if (evenI != -1) {
-      nums.remove(evenI);
-    }
-    */
     }
 }

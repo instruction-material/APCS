@@ -1,41 +1,22 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-
         VendingMachine machine = new VendingMachine();
         machine.setPeanuts(3);
         machine.setPretzels(8);
         machine.setMAndMs(20);
-
-        //won't let us set to value less than 0 or over 100
         machine.setMAndMs(-1);
         machine.setMAndMs(101);
-
-        //print out the vending machine:
-        System.out.println("\nVending Machine:");
-        System.out.println("Peanuts: " + machine.getPeanuts());
-        System.out.println("Pretzels: " + machine.getPretzels());
-        System.out.println("MAndMs: " + machine.getMAndMs());
-
-        //vend from the vending machine
-        System.out.println("\nVending 5 items of each type...");
-        for (int i = 0; i < 5; i++) {
+        printStock("Loaded", machine);
+        for (int round = 0; round < 5; round++) {
             machine.vendPeanuts();
-            machine.vendMAndMs();
             machine.vendPretzels();
+            machine.vendMAndMs();
         }
+        printStock("After vending", machine);
+    }
 
-        //print out the vending machine:
-        System.out.println("\nVending Machine:");
-        System.out.println("Peanuts: " + machine.getPeanuts());
-        System.out.println("Pretzels: " + machine.getPretzels());
-        System.out.println("MAndMs: " + machine.getMAndMs());
+    private static void printStock(String label, VendingMachine machine) {
+        System.out.println(label + ": " + machine.getPeanuts() + ", "
+                + machine.getPretzels() + ", " + machine.getMAndMs());
     }
 }

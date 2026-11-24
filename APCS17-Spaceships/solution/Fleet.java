@@ -1,18 +1,24 @@
 import java.util.ArrayList;
 
 public class Fleet {
-    public ArrayList<Spaceship> ships;
+    private final ArrayList<Spaceship> ships = new ArrayList<>();
 
-    public Fleet() {
-        this.ships = new ArrayList<>();
+    public void addSpaceship(Spaceship item) {
+        if (item != null) {
+            ships.add(item);
+        }
     }
 
-    public Fleet(ArrayList<Spaceship> ships) {
-        this.ships = ships;
+    public boolean removeSpaceship(Spaceship item) {
+        return ships.remove(item);
+    }
+
+    public int size() {
+        return ships.size();
     }
 
     @Override
     public String toString() {
-        return "Fleet: " + this.ships.toString() + "\n";
+        return "Fleet (" + size() + "): " + ships;
     }
 }

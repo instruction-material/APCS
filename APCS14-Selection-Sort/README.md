@@ -1,11 +1,5 @@
-# APCS14 Selection Sort
+# Selection sort
 
-Canonical source repository: `APCS`
+Sort a list in ascending order by placing the smallest remaining value at the next position. Each completed pass extends the sorted prefix.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Open the starter to begin and the reference to compare a completed implementation.

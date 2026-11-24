@@ -1,11 +1,5 @@
-# APCS17 Spaceships
+# Spaceship fleet
 
-Canonical source repository: `APCS`
+Give each class one responsibility. Fleet contains ships, Spaceship contains rooms, Room contains passengers, and Passenger stores a name. Each collection belongs to the object that contains it.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Open the starter to begin and the reference to compare a completed implementation.
