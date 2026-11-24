@@ -1,6 +1,3 @@
-# APCS Check in 1 Additional Practice Project starter
+# Descending FizzBuzz starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
-
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Run `javac Main.java && java Main`. The supplied loop prints the complete countdown. Replace its print decision so a multiple of both 3 and 5 prints FizzBuzz, a multiple of 3 prints Fizz, a multiple of 5 prints Buzz, and any other number prints itself.

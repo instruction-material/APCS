@@ -1,24 +1,16 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        // Variables
-        int forty = 40;
+        int points = 40;
+        double multiplier = 0.5;
+        boolean isOpen = false;
+        final int TICKET_COST = 10;
 
-        double half = .5;
-        // int half = .5; throws error as integers cannot have decimals
+        System.out.println("Points: " + points);
+        System.out.println("Multiplier: " + multiplier);
+        System.out.println("Open: " + isOpen);
+        System.out.println("Ticket cost: " + TICKET_COST);
 
-        boolean isCold = false;
-
-        // Final variables
-        final int COST = 10;
-        forty = 50;
-        // COST = 20; throws error as final variables cannot be changed.
+        points = 50;
+        System.out.println("Updated points: " + points);
     }
 }

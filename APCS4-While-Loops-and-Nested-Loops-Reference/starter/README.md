@@ -1,6 +1,3 @@
-# APCS4 While Loops and Nested Loops Reference starter
+# While and nested loops reference starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
-
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Run `javac Main.java && java Main`. Trace the ten lines from the `while` loop. The nested example starts at row 0 and column 0. Expand it to three rows and four columns. Set the first column again for each row and end a line only after that row is complete.

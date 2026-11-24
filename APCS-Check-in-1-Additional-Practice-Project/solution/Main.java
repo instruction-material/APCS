@@ -1,22 +1,14 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        for (int i = 100; i >= 0; i--) {
-            if (i % 3 == 0 && i % 5 == 0) {
+        for (int number = 100; number >= 0; number--) {
+            if (number % 3 == 0 && number % 5 == 0) {
                 System.out.println("FizzBuzz");
-            } else if (i % 3 == 0) {
+            } else if (number % 3 == 0) {
                 System.out.println("Fizz");
-            } else if (i % 5 == 0) {
+            } else if (number % 5 == 0) {
                 System.out.println("Buzz");
             } else {
-                System.out.println(i);
+                System.out.println(number);
             }
         }
     }

@@ -1,6 +1,3 @@
-# APCS1 Variables Reference starter
+# Variables reference starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
-
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Run `javac Main.java && java Main`. Identify the type of each of the four declarations before running. Change `points` to 50 after the first print, then print the updated value. Compare `points` with `TICKET_COST`, which is declared `final`.

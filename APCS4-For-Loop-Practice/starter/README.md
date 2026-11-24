@@ -1,6 +1,3 @@
-# APCS4 For Loop Practice starter
+# For loop practice starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
-
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Run `javac Main.java && java Main`. Enter a fictional name on the first line and a count from 0 through 10 on the second. Supply a loop that repeats the count once for each character of the name and a countdown through 0. Multiply the supplied values. For the maximum, start with the first value of a nonempty array so the method also works when all values are negative.

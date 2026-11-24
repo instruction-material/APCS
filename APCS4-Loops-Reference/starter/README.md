@@ -1,6 +1,3 @@
-# APCS4 Loops Reference starter
+# For and while loop reference starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
-
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Run `javac Main.java && java Main`. Identify the initial value, condition, and update for the supplied `for` loop. Keep the same three steps when completing the `while` loop. Each loop begins at 0 and prints through 9.

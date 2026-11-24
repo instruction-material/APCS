@@ -1,36 +1,16 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        int one = 1;
-        double half = .5;
-        double onePointFive = one + half;
-        System.out.println(onePointFive);
+        int numerator = 3;
+        int denominator = 2;
+        int whole = numerator / denominator;
+        double before = (double) numerator / denominator;
+        double after = (double) (numerator / denominator);
+        double negative = -2.75;
+        int narrowed = (int) negative;
 
-        int forty = 40;
-        double fortyAndAHalf = (double)forty + half;
-        int noDecimal = (int)fortyAndAHalf;
-
-        int num = 4;
-        int otherNum = 6;
-        System.out.println((int)num / otherNum);
-        System.out.println((int)(num / otherNum));
-
-        int output = num / otherNum;
-        System.out.println(output);
-        double result = fortyAndAHalf / num;
-        System.out.println(result);
-        result = ((double)num) / otherNum;
-        System.out.println(result);
-        result = (double)(num / otherNum);
-        System.out.println(result);
-
-        //int newNumber = half; errors due to loss of information
+        System.out.println("Integer division: " + whole);
+        System.out.println("Cast before division: " + before);
+        System.out.println("Cast after division: " + after);
+        System.out.println("Negative cast: " + narrowed);
     }
 }

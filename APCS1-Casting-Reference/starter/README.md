@@ -1,6 +1,3 @@
-# APCS1 Casting Reference starter
+# Casting reference starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
-
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Run `javac Main.java && java Main`. The example starts with 3 and 2. Compare `3 / 2` with `(double) 3 / 2`. Add an example that casts the result of integer division to `double`. Then cast the value -2.75 to `int`.

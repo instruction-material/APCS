@@ -1,24 +1,19 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        String name = "Juni";
-        int i = 0;
-        while (i < 10) {
-            System.out.println(name);
-            i++; // the loop repeats forever if this line is removed
+        int count = 0;
+        while (count < 10) {
+            System.out.println("Practice");
+            count++;
         }
 
-        for (int j = 0; j < 3; j++) {
-            for (int k = 0; k < 4; k++) {
-                System.out.println("j: " + j + " k: " + k);
+        for (int row = 0; row < 3; row++) {
+            for (int column = 0; column < 4; column++) {
+                if (column > 0) {
+                    System.out.print(" ");
+                }
+                System.out.print("(" + row + "," + column + ")");
             }
+            System.out.println();
         }
     }
 }

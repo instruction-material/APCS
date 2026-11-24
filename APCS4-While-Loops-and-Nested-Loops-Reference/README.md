@@ -1,11 +1,5 @@
-# APCS4 While Loops and Nested Loops Reference
+# While and nested loops reference
 
-Canonical source repository: `APCS`
+Trace a counter that stops a while loop. Count the visits to every row and column in a nested loop.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Use [starter](starter) for practice and [solution](solution) for a worked reference. Each folder contains its own Main.java and a short guide.

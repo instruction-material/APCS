@@ -1,6 +1,3 @@
-# APCS4 While Loop and Nested Loop Practice starter
+# While loop and nested loop practice starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
-
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Run `javac Main.java && java Main`. Trace integer halving from 129 to 0. Use a second `while` loop to print the supplied draws until the first 7, or until the array ends. Build a ten-row staircase using both loop forms. Then use each loop form to print a multiplication table whose rows and columns range from 1 through 12. Start a new line when the inner loop finishes.

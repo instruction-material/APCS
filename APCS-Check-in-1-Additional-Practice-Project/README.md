@@ -1,11 +1,5 @@
-# APCS Check in 1 Additional Practice Project
+# Descending FizzBuzz
 
-Canonical source repository: `APCS`
+Count down from 100 through 0, using remainders to decide what to print for each value.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Use [starter](starter) for practice and [solution](solution) for a worked reference. Each folder contains its own Main.java and a short guide.
