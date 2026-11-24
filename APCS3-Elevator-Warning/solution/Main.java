@@ -1,27 +1,23 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
+    private static final int LIMIT = 1500;
+
     public static void main(String[] args) {
-        int weightLimit = 1500;
+        printStatus(1499);
+        printStatus(1500);
+        printStatus(1501);
+    }
 
-        int elevatorWeight = (int)(Math.random() * 3000) + 1;
+    private static void printStatus(int weight) {
+        System.out.println(weight + " lb: " + loadStatus(weight, LIMIT));
+    }
 
-        System.out.println("\nThe final weight of the elevator is: " +
-                           elevatorWeight);
-        if (elevatorWeight > weightLimit) {
-            System.out.println("WARNING! The elevator is " +
-                               (elevatorWeight - weightLimit) +
-                               " pounds overweight!");
-        } else {
-            System.out.println("The elevator is good to go! It is " +
-                               (weightLimit - elevatorWeight) +
-                               " pounds under the weight limit.");
+    static String loadStatus(int weight, int limit) {
+        if (weight > limit) {
+            return (weight - limit) + " lb over the limit";
         }
+        if (weight == limit) {
+            return "At the limit";
+        }
+        return (limit - weight) + " lb under the limit";
     }
 }

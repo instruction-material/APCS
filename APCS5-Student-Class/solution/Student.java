@@ -1,40 +1,34 @@
-class Student {
-    public String firstName;
-    public String lastName;
-    public int grade;
+public class Student {
+    private final String firstName;
+    private final String lastName;
+    private int grade;
 
-    public Student(String fname, String lname, int g) {
-        firstName = fname;
-        lastName = lname;
-        grade = g;
+    public Student(String firstName, String lastName, int grade) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.grade = grade;
     }
 
     public void printInfo() {
-        System.out.println(firstName + " " + lastName + " is in grade " +
-                           grade);
+        System.out.println(firstName + " " + lastName + ", grade " + grade);
     }
 
     public void passGrade() {
-        System.out.println(firstName + " just passed a grade!");
-        if (grade <= 12) {
-            if (grade == 12) {
-                System.out.println(firstName + " graduated!");
-            }
+        if (grade < 13) {
             grade++;
-        } else if (grade > 12) {
-            System.out.println(firstName + " is in college!");
         }
     }
 
     public String getSchoolType() {
         if (grade < 6) {
             return "elementary school";
-        } else if (grade < 9) {
-            return "middle school";
-        } else if (grade < 13) {
-            return "high school";
-        } else {
-            return "college";
         }
+        if (grade < 9) {
+            return "middle school";
+        }
+        if (grade < 13) {
+            return "high school";
+        }
+        return "college";
     }
 }

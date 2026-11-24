@@ -1,33 +1,16 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
+        checkAdvancement(5);
+        checkAdvancement(8);
+        checkAdvancement(12);
+        checkAdvancement(13);
+    }
 
-        System.out.println();
-        Student stu1 = new Student("Billy", "Bob", 8);
-        stu1.printInfo();
-        System.out.println("He's in " + stu1.getSchoolType());
-        stu1.passGrade();
-        System.out.println("He's in " + stu1.getSchoolType());
-
-        System.out.println();
-        Student stu2 = new Student("Jill", "Jacobs", 5);
-        stu2.printInfo();
-        System.out.println("She's in " + stu2.getSchoolType());
-        stu2.passGrade();
-        System.out.println("She's in " + stu2.getSchoolType());
-
-        System.out.println();
-        Student stu3 = new Student("Sam", "Smith", 12);
-        stu3.printInfo();
-        System.out.println("He's in " + stu3.getSchoolType());
-        stu3.passGrade();
-        System.out.println("He's in " + stu3.getSchoolType());
+    private static void checkAdvancement(int grade) {
+        Student record = new Student("Sample", "Student", grade);
+        record.printInfo();
+        System.out.println("Before advancement: " + record.getSchoolType());
+        record.passGrade();
+        System.out.println("After advancement: " + record.getSchoolType());
     }
 }

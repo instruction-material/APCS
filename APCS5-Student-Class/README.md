@@ -1,11 +1,5 @@
-# APCS5 Student Class
+# Student class
 
-Canonical source repository: `APCS`
+Build an object that keeps track of a student's grade and school type. Practice changing one object's grade while preserving the other records.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Open the starter to begin the exercise and the reference to compare a completed implementation.

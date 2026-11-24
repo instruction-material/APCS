@@ -1,6 +1,7 @@
-# APCS3 Elevator Warning starter
+# Elevator warning starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Compile and run with `javac Main.java && java Main`. The program prints three sample loads with a placeholder result. Complete `loadStatus` in `Main.java` and run it again.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+For a limit of 1500 lb, the sample should report 1 lb under for 1499, at the limit for 1500, and 1 lb over for 1501. A warning applies only when the load exceeds the limit. Calculate the difference in the correct order so over and under amounts are positive.
+
+Record each comparison and result. Then add a load of 0 lb and 3000 lb to check both distances.

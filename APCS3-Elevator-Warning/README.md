@@ -1,11 +1,5 @@
-# APCS3 Elevator Warning
+# Elevator warning
 
-Canonical source repository: `APCS`
+Compare a fixed set of elevator loads to a weight limit. Trace the below-limit, equal, and above-limit cases.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Open the starter to begin the exercise and the reference to compare a completed implementation.
