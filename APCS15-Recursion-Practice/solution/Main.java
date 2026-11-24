@@ -13,7 +13,7 @@ class Main {
         System.out.println(factorial(5));
 
         System.out.print("2^8 =  ");
-        System.out.println(exponent(2, 6));
+        System.out.println(exponent(2, 8));
 
         System.out.print("Length of \"hello world\": ");
         System.out.println(length("hello world"));
@@ -57,8 +57,7 @@ class Main {
 
     //4
     public static int length(String string) {
-        //System.out.println("s: "  + string);
-        if (string.equals("")) {
+        if (string.isEmpty()) {
             return 0;
         }
         return 1 + length(string.substring(1));
@@ -120,29 +119,23 @@ class Main {
     }
 
     public static int log(int base, int result, int ans) {
-        //System.out.println(base + " " + result);
-        //base case (end)
+        if (base < 2 || result < 1) {
+            return -1;
+        }
         if (result == 1) {
             return ans;
         }
-
-        //base case (error)
-        double d = (double)result / base;
-        int i = result / base;
-        if (d != i) {
+        if (result % base != 0) {
             return -1;
         }
-
-        //recursive step
-        return log(base, i);
+        return log(base, result / base, ans + 1);
     }
 
     //9
     // euclid's algorithm
     public static int gcd(int a, int b) {
-        //System.out.println("a: " + a + "\tb: " + b);
-        if (a % b == 0) {
-            return b;
+        if (b == 0) {
+            return a;
         }
         return gcd(b, a % b);
     }

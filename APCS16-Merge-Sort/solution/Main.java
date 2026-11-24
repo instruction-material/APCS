@@ -1,19 +1,12 @@
 import java.util.Arrays;
 
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    public static void main(String args[]) {
-        int[] arr = {12, 11, 13, 5, 6, 7, 1, 1, 1, 1};
-
-        System.out.println("\nGiven Array:");
-        System.out.println(Arrays.toString(arr));
-
+public class Main {
+    public static void main(String[] args) {
         MergeSort sorter = new MergeSort();
-        arr = sorter.mergeSort(arr);
-
-        System.out.println("\nSorted Array:");
-        System.out.println(Arrays.toString(arr));
+        int[] left = {-3, 4, 4};
+        int[] right = {-1, 2, 8};
+        System.out.println("Merged: " + Arrays.toString(sorter.merge(left, right)));
+        int[] input = {12, 4, -3, 4, 0};
+        System.out.println("Sorted: " + Arrays.toString(sorter.mergeSort(input)));
     }
 }
