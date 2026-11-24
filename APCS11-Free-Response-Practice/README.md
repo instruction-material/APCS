@@ -1,11 +1,5 @@
-# APCS11 Free Response Practice
+# ArrayList Practice: Delimiters
 
-Canonical source repository: `APCS`
+Given distinct opening and closing tokens, extract exact matches from a non-null array into a new list in the same order. A list is balanced when each closing token matches an earlier unmatched opening token and none remains open. The balance method receives a list containing only the two configured tokens.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+The starter and solution contain the same practice contract.

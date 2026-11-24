@@ -1,6 +1,11 @@
-# APCS Check in 4 starter
+# Data Collections Check
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Implement `removeShortLabels` to delete strings shorter than a given length while preserving the remaining order. Implement `countPositive` to count strictly positive entries in a rectangular integer grid without modifying it.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Attempt the prompt before comparing with the reference.
+
+Use JDK 17 or later. Compile with `javac Main.java`, then run `java Main`.
+
+## Checks
+
+`[desk, ox, i, shelf]` with a minimum length of three becomes `[desk, shelf]`. Adjacent matches must both be removed. The rows `[0, 3, -1]` and `[2, -3, 5]` contain three positive entries. An empty structure gives zero changes or counts.

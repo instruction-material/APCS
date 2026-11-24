@@ -1,11 +1,5 @@
-# APCS5 Free Response Practice
+# Class Design Practice: Step Tracker
 
-Canonical source repository: `APCS`
+Track days with at least a constructor-supplied minimum number of steps. `addDailySteps` records one nonnegative daily count, `totalDaysActive` returns the qualifying day count, and `averageSteps` returns the average over all recorded days or 0.0 before any entry.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+The starter and solution contain the same practice contract.

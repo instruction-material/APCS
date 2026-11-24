@@ -1,11 +1,5 @@
-# APCS Check in 3
+# Class Creation Check
 
-Canonical source repository: `APCS`
+Complete `SupplyBin` with a positive fixed capacity and a starting quantity from zero through capacity. Put state in private fields. `add` and `take` accept positive amounts only. A request returns true if it succeeds and false if the bin would exceed capacity or fall below zero.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+The starter and solution contain the same practice contract.

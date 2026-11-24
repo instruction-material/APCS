@@ -1,6 +1,11 @@
-# APCS11 Free Response Practice starter
+# ArrayList Practice: Delimiters
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Given distinct opening and closing tokens, extract exact matches from a non-null array into a new list in the same order. A list is balanced when each closing token matches an earlier unmatched opening token and none remains open. The balance method receives a list containing only the two configured tokens.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Attempt the prompt before comparing with the reference.
+
+Use JDK 17 or later. Compile with `javac Main.java Delimiters.java`, then run `java Main`.
+
+## Checks
+
+Two opening parentheses followed by two closing parentheses are balanced. A closing parenthesis followed by an opening parenthesis is not balanced even though the totals match. An empty delimiter list is balanced. Text containing part of a token is ignored.

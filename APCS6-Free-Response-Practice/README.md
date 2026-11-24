@@ -1,11 +1,5 @@
-# APCS6 Free Response Practice
+# Methods Practice: Calendar
 
-Canonical source repository: `APCS`
+Use the three supplied date helpers. `numberOfLeapYears(first, last)` counts leap years in the inclusive ordered range. `dayOfWeek(month, day, year)` returns 0 for Sunday through 6 for Saturday for a valid Gregorian date. Use years 1 through 9999. The first day of a year has ordinal 1.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+The starter and solution contain the same practice contract.

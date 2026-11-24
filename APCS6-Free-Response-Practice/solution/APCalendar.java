@@ -1,28 +1,31 @@
-public class APCalendar {
-    public static int numberOfLeapYears(int year1, int year2) {
-        int leapYears = 0;
+import java.time.LocalDate;
+import java.time.Year;
 
-        for (int y = year1; y <= year2; y++) {
-            if (isLeapYear(y)) {
-                leapYears++;
+public class APCalendar {
+    public static int numberOfLeapYears(int first, int last) {
+        int count = 0;
+        for (int year = first; year <= last; year++) {
+            if (isLeapYear(year)) {
+                count++;
             }
         }
-        return leapYears;
+        return count;
     }
 
-    //Zero indexed day of the week
     public static int dayOfWeek(int month, int day, int year) {
-        int weekday = firstDayOfYear(year);
-        int additionalDays = dayOfYear(month, day, year) - 1;
+        int daysAfterFirst = dayOfYear(month, day, year) - 1;
+        return (firstDayOfYear(year) + daysAfterFirst) % 7;
+    }
 
-        for (int d = 1; d <= additionalDays; d++) {
-            weekday++;
+    private static boolean isLeapYear(int year) {
+        return Year.isLeap(year);
+    }
 
-            if (weekday == 7) {
-                weekday = 0;
-            }
-        }
+    private static int firstDayOfYear(int year) {
+        return LocalDate.of(year, 1, 1).getDayOfWeek().getValue() % 7;
+    }
 
-        return weekday;
+    private static int dayOfYear(int month, int day, int year) {
+        return LocalDate.of(year, month, day).getDayOfYear();
     }
 }

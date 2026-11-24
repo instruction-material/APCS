@@ -1,34 +1,26 @@
 public class StepTracker {
-    private final int minStepsRequired;
-    private int totalDaysActive;
-    private int totalDays;
-    private int totalSteps;
+    private final int minimum;
+    private int activeDays;
+    private int days;
+    private long totalSteps;
 
-    public StepTracker(int min) {
-        this.minStepsRequired = min;
-        totalDaysActive = 0;
-        totalDays = 0;
-        totalSteps = 0;
+    public StepTracker(int minimum) {
+        this.minimum = minimum;
     }
 
     public void addDailySteps(int steps) {
-        if (steps >= minStepsRequired) {
-            totalDaysActive++;
+        if (steps >= minimum) {
+            activeDays++;
         }
-
-        totalDays++;
+        days++;
         totalSteps += steps;
     }
 
     public int totalDaysActive() {
-        return totalDaysActive;
+        return activeDays;
     }
 
     public double averageSteps() {
-        if (totalDays == 0) {
-            return 0;
-        }
-
-        return totalSteps / (double)totalDays;
+        return days == 0 ? 0.0 : (double) totalSteps / days;
     }
 }

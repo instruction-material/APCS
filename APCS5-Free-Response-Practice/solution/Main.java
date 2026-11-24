@@ -1,22 +1,13 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        StepTracker tr = new StepTracker(10000);
-        tr.activeDays(); //0
-        tr.addDailySteps(9000);
-        tr.addDailySteps(5000);
-        tr.averageSteps(); //7000
-        tr.addDailySteps(13000);
-        tr.averageSteps(); //9000
-        tr.addDailySteps(23000);
-        tr.addDailySteps(1111);
-        tr.activeDays(); //2
+        StepTracker tracker = new StepTracker(100);
+        StepTracker other = new StepTracker(100);
+        System.out.println("Empty average: " + tracker.averageSteps());
+        tracker.addDailySteps(90);
+        tracker.addDailySteps(100);
+        tracker.addDailySteps(114);
+        System.out.println("Active days: " + tracker.totalDaysActive());
+        System.out.println("Average: " + tracker.averageSteps());
+        System.out.println("Independent average: " + other.averageSteps());
     }
 }

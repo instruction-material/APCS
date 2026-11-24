@@ -1,6 +1,11 @@
-# APCS5 Free Response Practice starter
+# Class Design Practice: Step Tracker
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Track days with at least a constructor-supplied minimum number of steps. `addDailySteps` records one nonnegative daily count, `totalDaysActive` returns the qualifying day count, and `averageSteps` returns the average over all recorded days or 0.0 before any entry.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Attempt the prompt before comparing with the reference.
+
+Use JDK 17 or later. Compile with `javac Main.java StepTracker.java`, then run `java Main`.
+
+## Checks
+
+With a threshold of 100, the daily values 90, 100 and 114 produce two active days and an average of 304/3. An independent tracker stays empty. Use floating division instead of truncating the average.

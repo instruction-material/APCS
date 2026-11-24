@@ -1,53 +1,36 @@
-public class Delimiters {
-    private String openDel;
-    private String closeDel;
+import java.util.ArrayList;
 
-    /**
-	 * Constructs a Delimiters object where open is the open delimiter and close is the
-	 * close delimiter.
-	 * Precondition: open and close are non-empty strings.
-	 */
+public class Delimiters {
+    private final String open;
+    private final String close;
+
     public Delimiters(String open, String close) {
-        openDel = open;
-        closeDel = close;
+        this.open = open;
+        this.close = close;
     }
 
-    /**
-	 * Returns an ArrayList of delimiters from the array tokens, as described in part (a).
-	 */
     public ArrayList<String> getDelimitersList(String[] tokens) {
-        ArrayList<String> delimiters = new ArrayList<>();
-
-        for (String t : tokens) {
-            if (t.equals(openDel) || t.equals(closeDel)) {
-                delimiters.add(t);
+        ArrayList<String> selected = new ArrayList<>();
+        for (String token : tokens) {
+            if (open.equals(token) || close.equals(token)) {
+                selected.add(token);
             }
         }
-
-        return delimiters;
+        return selected;
     }
 
-    /**
-	 * Returns true if the delimiters are balanced and false otherwise, as described in part (b).
-	 * Precondition: delimiters contains only valid open and close delimiters.
-	 */
     public boolean isBalanced(ArrayList<String> delimiters) {
-        int numOpen = 0, numClosed = 0;
-
-        for (String d : delimiters) {
-            if (d.equals(openDel)) {
-                numOpen++;
+        int depth = 0;
+        for (String delimiter : delimiters) {
+            if (open.equals(delimiter)) {
+                depth++;
+            } else {
+                depth--;
             }
-
-            if (d.equals(closeDel)) {
-                numClosed++;
-            }
-
-            if (numClosed > numOpen) {
+            if (depth < 0) {
                 return false;
             }
         }
-
-        return numOpen == numClosed;
+        return depth == 0;
     }
 }
