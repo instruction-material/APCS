@@ -1,21 +1,16 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+import java.util.Random;
+
+public class Main {
     public static void main(String[] args) {
-
-        Deck p1Deck = new Deck();
-        Deck p2Deck = new Deck();
-
+        Deck first = new Deck(new Random(17));
+        Deck second = new Deck(new Random(17));
         LuckGame game = new LuckGame();
-        for (int i = 0; i < 53; i++) {
-            game.play(p1Deck, p2Deck);
+        System.out.println("Initial deck size: " + first.size());
+
+        for (int round = 0; round < 53; round++) {
+            game.play(first, second);
         }
         System.out.println(game.getResults());
+        System.out.println("Remaining: " + first.size() + ", " + second.size());
     }
 }

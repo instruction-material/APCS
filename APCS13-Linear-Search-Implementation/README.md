@@ -1,11 +1,5 @@
-# APCS13 Linear Search Implementation
+# Linear Search Implementation
 
-Canonical source repository: `APCS`
+Implement a scan that checks each array element in order. Add a second method for ascending data that stops when the current value exceeds the target.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+The starter runs with unfinished tasks. The solution shows the completed implementation.

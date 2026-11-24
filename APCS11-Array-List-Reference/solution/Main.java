@@ -1,47 +1,29 @@
 import java.util.ArrayList;
 
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        ArrayList<String> myStrings = new ArrayList<String>();
-        ArrayList<Integer> myInts = new ArrayList<Integer>();
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(42);
+        numbers.add(-73);
+        numbers.add(0);
+        numbers.add(1137);
+        numbers.add(1, -5);
+        System.out.println("Inserted: " + numbers);
+        System.out.println("At index 1: " + numbers.get(1));
 
-        myStrings.add("sandstorm");
-        myStrings.add("crab rave");
-        myInts.add(42);
-        myInts.add(-73);
+        numbers.set(numbers.size() - 1, 7);
+        System.out.println("Replaced: " + numbers);
+        System.out.println("Size: " + numbers.size());
 
-        myStrings.add(0, "dragostea din tei");
-        myInts.add(1137);
+        removeNegatives(numbers);
+        System.out.println("Kept: " + numbers);
+    }
 
-        System.out.println(myInts.get(0));
-        System.out.println(myInts.get(2));
-
-        for (int i = 0; i < myInts.size(); i++) {
-            System.out.println(myInts.get(i));
-        }
-
-        for (int i = 0; i < myInts.size(); i++) {
-            if (myInts.get(i) < 0) {
-                myInts.set(i, -1);
-            } else if (myInts.get(i) > 0) {
-                myInts.set(i, 1);
+    static void removeNegatives(ArrayList<Integer> numbers) {
+        for (int i = numbers.size() - 1; i >= 0; i--) {
+            if (numbers.get(i) < 0) {
+                numbers.remove(i);
             }
         }
-        System.out.println(myInts);
-
-        while (myStrings.size() > 0) {
-            System.out.println(myStrings.remove(0));
-        }
-
-        // Throws an IndexOutOfBounds exception
-        // System.out.println(myInts.get(9));
     }
 }

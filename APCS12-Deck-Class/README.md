@@ -1,11 +1,5 @@
-# APCS12 Deck Class
+# Deck Class
 
-Canonical source repository: `APCS`
+Wrap a supplied list in a Deck with its own storage. Use a comparable Suit value to make the suit hierarchy explicit. Keep the deck usable when a requested draw index is invalid.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+The starter runs with unfinished tasks. The solution shows the completed implementation.

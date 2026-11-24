@@ -1,11 +1,5 @@
-# APCS11 Fortune Teller Class
+# Fortune Teller
 
-Canonical source repository: `APCS`
+Build a list of five fortunes and draw without replacement. Give the draw operation its own method so displaying an object does not use up a fortune.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+The starter runs with unfinished tasks. The solution shows the completed implementation.

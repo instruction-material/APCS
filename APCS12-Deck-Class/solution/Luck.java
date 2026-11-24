@@ -1,15 +1,22 @@
+import java.util.Random;
+
 public class Luck {
+    private final Random random;
+
+    public Luck() {
+        this(new Random());
+    }
+
+    public Luck(Random random) {
+        this.random = random;
+    }
 
     public int luckGame(Deck one, Deck two) {
-        int numOne = (int)(Math.random() * one.size());
-        int numTwo = (int)(Math.random() * two.size());
-        Card cardOne = one.remove(numOne);
-        Card cardTwo = two.remove(numTwo);
-        System.out.println("Player one got: " + cardOne.number + " of " +
-                           cardOne.type);
-        System.out.println("Player two got: " + cardTwo.number + " of " +
-                           cardTwo.type);
-        int wins = cardOne.greaterThan(cardTwo);
-        return wins;
+        if (one == two || one.size() == 0 || two.size() == 0) {
+            return 0;
+        }
+        Card first = one.remove(random.nextInt(one.size()));
+        Card second = two.remove(random.nextInt(two.size()));
+        return first.greaterThan(second);
     }
 }

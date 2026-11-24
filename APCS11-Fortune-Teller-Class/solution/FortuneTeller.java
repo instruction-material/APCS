@@ -1,25 +1,32 @@
 import java.util.ArrayList;
-// Create a class called FortuneTeller. Each FortuneTeller should have an array of five fixed fortunes (strings) that you make up. Printing a FortuneTeller should output one of these five fortunes randomly.
+import java.util.Random;
 
 public class FortuneTeller {
-    private ArrayList<String> fortunes;
+    private final ArrayList<String> fortunes = new ArrayList<>();
+    private final Random random;
 
     public FortuneTeller() {
-        fortunes = new ArrayList<>(5);
-        fortunes.add("You will win the lottery!");
-        fortunes.add("You will get the flu.");
-        fortunes.add("You will adopt a puppy!");
-        fortunes.add("You will drink some water.");
-        fortunes.add("You will make a new friend!");
+        this(new Random());
     }
 
-    @Override
-    public String toString() {
-        if (fortunes.size() > 0) {
-            int randomIndex = (int)(Math.random() * fortunes.size());
-            return fortunes.remove(randomIndex);
-        } else {
-            return "The future is foggy… come back tomorrow!";
+    public FortuneTeller(Random random) {
+        this.random = random;
+        fortunes.add("You will discover a new song.");
+        fortunes.add("A small project will work.");
+        fortunes.add("You will find a favorite book.");
+        fortunes.add("You will solve a puzzle.");
+        fortunes.add("You will make a new friend.");
+    }
+
+    public int remaining() {
+        return fortunes.size();
+    }
+
+    public String drawFortune() {
+        if (fortunes.isEmpty()) {
+            return "No fortunes left.";
         }
+        int index = random.nextInt(fortunes.size());
+        return fortunes.remove(index);
     }
 }

@@ -1,40 +1,18 @@
 import java.util.ArrayList;
 
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        Deck firstDeck = makeDeck();
-        Deck secondDeck = makeDeck();
-        Luck game = new Luck();
-        int wins = game.luckGame(firstDeck, secondDeck);
-        if (wins > 0) {
-            System.out.println("Yay! We won!");
-        } else {
-            System.out.println("Better luck next time");
-        }
-        int secondGame = game.luckGame(firstDeck, secondDeck);
-        if (secondGame > 0) {
-            System.out.println("Yay! We won!");
-        } else {
-            System.out.println("Better try again :(");
-        }
-    }
+        ArrayList<Card> supplied = new ArrayList<>();
+        supplied.add(new Card("clubs", 12));
+        supplied.add(new Card("diamonds", 12));
+        Deck deck = new Deck(supplied);
 
-    public static Deck makeDeck() {
-        ArrayList<Card> cards = new ArrayList<>();
-        for (int i = 0; i < 14; i++) {
-            cards.add(new Card("Diamonds", i));
-            cards.add(new Card("Hearts", i));
-            cards.add(new Card("Spades", i));
-            cards.add(new Card("Clubs", i));
-        }
-        return new Deck(cards);
+        System.out.println("After construction: " + deck.size());
+        supplied.clear();
+        System.out.println("After caller clears its list: " + deck.size());
+        System.out.println("Invalid index: " + deck.remove(-1));
+        System.out.println("First card: " + deck.remove(0));
+        System.out.println("Diamond ranks above club: "
+            + (new Suit("Diamonds").compareTo(new Suit("Clubs")) > 0));
     }
 }

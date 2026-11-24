@@ -1,6 +1,7 @@
-# APCS11 Fortune Teller Class starter
+# Fortune Teller
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Build a list of five fortunes and draw without replacement. Give the draw operation its own method so displaying an object does not use up a fortune.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Complete the TODOs before comparing results with the checks. Compile with `javac Main.java FortuneTeller.java`, then run `java Main` using JDK 17 or later.
+
+Record the five distinct draws. The sixth draw prints `No fortunes left.` and the remaining count stays at zero. Try a second object to check whether the two lists are independent.

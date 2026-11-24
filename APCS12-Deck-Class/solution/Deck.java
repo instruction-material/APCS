@@ -1,20 +1,20 @@
-//Wrapper class around the idea of a Deck
-//Holds ArrayList of cards
-
 import java.util.ArrayList;
 
 public class Deck {
-    ArrayList<Card> cards;
+    private final ArrayList<Card> cards;
 
     public Deck(ArrayList<Card> cards) {
-        this.cards = cards;
+        this.cards = new ArrayList<>(cards);
     }
 
     public int size() {
         return cards.size();
     }
 
-    public Card remove(int loc) {
-        return cards.remove(loc);
+    public Card remove(int index) {
+        if (index < 0 || index >= cards.size()) {
+            return null;
+        }
+        return cards.remove(index);
     }
 }

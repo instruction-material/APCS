@@ -1,17 +1,11 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+import java.util.Random;
+
+public class Main {
     public static void main(String[] args) {
-        FortuneTeller f = new FortuneTeller();
-        System.out.println();
-        for (int i = 0; i < 12; i++) {
-            System.out.println(f);
+        FortuneTeller teller = new FortuneTeller(new Random(17));
+        for (int draw = 0; draw < 6; draw++) {
+            System.out.println(teller.drawFortune());
         }
+        System.out.println("Remaining: " + teller.remaining());
     }
 }

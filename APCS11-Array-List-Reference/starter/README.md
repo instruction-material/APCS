@@ -1,6 +1,7 @@
-# APCS11 Array List Reference starter
+# ArrayList Reference Pack
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Trace `add`, `get`, `set`, `remove`, and `size()` on a list of boxed integers. Replace one existing value and remove every negative entry without skipping neighbors.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Complete the TODOs before comparing results with the checks. Compile with `javac Main.java`, then run `java Main` using JDK 17 or later.
+
+Insertion gives `[42, -5, -73, 0, 1137]`. Replacing the last value with 7 keeps the size at five. Removing the adjacent negative values gives `[42, 0, 7]`. Explain the change to each index after a removal.

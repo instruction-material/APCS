@@ -1,34 +1,30 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        int[] arr = {2, 4, 5, 7, 8, 10, 14, 16, 19, 20, 34, 55, 62, 74, 99};
-        System.out.println(linearSearch(arr, 10));
-        System.out.println(linearSearchSorted(arr, 10));
-        System.out.println(linearSearch(arr, 11));
-        System.out.println(linearSearchSorted(arr, 11));
+        int[] mixed = {7, 2, 7, 1};
+        int[] sorted = {-3, 0, 4, 4, 9};
+        System.out.println("Front: " + linearSearch(mixed, 7));
+        System.out.println("End: " + linearSearch(mixed, 1));
+        System.out.println("Absent: " + linearSearch(mixed, 9));
+        System.out.println("Sorted gap: " + linearSearchSorted(sorted, 2));
+        System.out.println("Sorted duplicate: " + linearSearchSorted(sorted, 4));
+        System.out.println("Empty: " + linearSearchSorted(new int[0], 4));
     }
 
-    public static boolean linearSearch(int[] arr, int key) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == key) {
+    public static boolean linearSearch(int[] array, int target) {
+        for (int value : array) {
+            if (value == target) {
                 return true;
             }
         }
         return false;
     }
 
-    public static boolean linearSearchSorted(int[] arr, int key) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == key) {
+    public static boolean linearSearchSorted(int[] array, int target) {
+        for (int value : array) {
+            if (value == target) {
                 return true;
-            } else if (arr[i] > key) {
+            }
+            if (value > target) {
                 return false;
             }
         }

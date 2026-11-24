@@ -1,15 +1,21 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Deck {
-    private ArrayList<Card> cards;
+    private final ArrayList<Card> cards = new ArrayList<>();
+    private final Random random;
 
     public Deck() {
-        this.cards = new ArrayList<>();
-        for (int i = 1; i < 14; i++) {
-            cards.add(new Card("Clubs", i));
-            cards.add(new Card("Diamonds", i));
-            cards.add(new Card("Hearts", i));
-            cards.add(new Card("Spades", i));
+        this(new Random());
+    }
+
+    public Deck(Random random) {
+        this.random = random;
+        String[] suits = {"Clubs", "Diamonds", "Hearts", "Spades"};
+        for (String suit : suits) {
+            for (int rank = 1; rank <= 13; rank++) {
+                cards.add(new Card(suit, rank));
+            }
         }
     }
 
@@ -18,10 +24,9 @@ public class Deck {
     }
 
     public Card removeRandom() {
-        if (cards.size() > 0) {
-            int index = (int)(Math.random() * cards.size());
-            return cards.remove(index);
+        if (cards.isEmpty()) {
+            return null;
         }
-        return null;
+        return cards.remove(random.nextInt(cards.size()));
     }
 }

@@ -1,6 +1,7 @@
-# APCS13 Linear Search Implementation starter
+# Linear Search Implementation
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Implement a scan that checks each array element in order. Add a second method for ascending data that stops when the current value exceeds the target.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Complete the TODOs before comparing results with the checks. Compile with `javac Main.java`, then run `java Main` using JDK 17 or later.
+
+On `[7, 2, 7, 1]`, searching for 7 or 1 succeeds and searching for 9 fails. On `[-3, 0, 4, 4, 9]`, the sorted search for 2 stops at the first 4. An empty array returns false.
