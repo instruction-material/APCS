@@ -1,6 +1,5 @@
-# APCS6 Getters and Setters Reference starter
+# Getters and Setters starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Run `javac Main.java Time.java && java Main` from this folder.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Implement setMins and setSecs using setHours as a model. A minute or second is 0 through 59. An invalid setter leaves the old value available through its getter. Trace the supplied reset method, which checks all three values before updating any field.

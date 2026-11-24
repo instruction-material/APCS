@@ -1,6 +1,6 @@
 class UpShifter extends Shifter {
     @Override
-    public String shift(String word) {
-        return shift(word, 1);
+    public String shift(String text) {
+        return shift(text, 1);
     }
 }

@@ -1,6 +1,5 @@
-# APCS Check in 3 Additional Practice Project starter
+# Letter Shifter starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Run `javac Main.java Shifter.java UpShifter.java DownShifter.java && java Main` from this folder.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Enter one line after starting Main. Complete the helper to shift only ASCII A–Z or a–z. Convert to an index from 0 through 25 and normalize a negative shift with Math.floorMod. Complete DownShifter so it delegates with -1. Copy spaces, digits, and punctuation as written.

@@ -1,6 +1,5 @@
-# APCS10 Array Reference starter
+# Array Reference starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Run `javac Main.java && java Main` from this folder.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Run the starter and locate the default 0 and the last valid index, length minus one. Complete square to update the supplied array in place. Compare its effect with replaceLocally, which assigns a new array only to its parameter. Trace the separate two-dimensional sum.

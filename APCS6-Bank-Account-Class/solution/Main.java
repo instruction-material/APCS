@@ -1,48 +1,14 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        System.out.println("\nJUNI BANKING");
-        System.out.println("\n---------------------------------\n");
-
-        //create a new account
-        BankAccount sarah = new BankAccount("Sarah");
-        sarah.printAccountInfo();
-
-        // Sarah has insufficient funds
-        System.out.println();
-        System.out.println("Try to withdraw 10 dollars");
-        boolean couldWithdraw = sarah.withdraw(10);
-        System.out.println("Was Sarah able to withdraw? " + couldWithdraw);
-
-        // Sarah should have enough funds now
-        System.out.println();
-        System.out.println("Deposit 25 dollars");
-        sarah.deposit(25);
-        System.out.println("Try to withdraw 10 dollars");
-        couldWithdraw = sarah.withdraw(10);
-        System.out.println("Was Sarah able to withdraw? " + couldWithdraw);
-        sarah.printAccountInfo();
-
-        //create two more accounts
-        System.out.println("\n---------------------------------\n");
-        BankAccount taylor = new BankAccount("Taylor", 100);
-        taylor.printAccountInfo();
-        BankAccount jared = new BankAccount("Jared", 25);
-        jared.printAccountInfo();
-
-        //print static variables
-        System.out.println();
-        System.out.println("Bank Interest Rate: " +
-                           BankAccount.getInterestRate());
-        System.out.println("Bank Total: " + BankAccount.getBankTotal());
-        System.out.println("Number of Accounts: " +
-                           BankAccount.getNumAccounts());
+        BankAccount first = new BankAccount("Fern");
+        BankAccount second = new BankAccount("Moss", 100);
+        System.out.println("Empty withdrawal: " + first.withdraw(10));
+        System.out.println("Deposit: " + first.deposit(25));
+        System.out.println("Withdrawal: " + first.withdraw(10));
+        System.out.println("Rejected negative withdrawal: " + first.withdraw(-5));
+        System.out.println("Fern balance: " + first.getBalance());
+        System.out.println("Moss balance: " + second.getBalance());
+        System.out.println("Bank total: " + BankAccount.getBankTotal());
+        System.out.println("Account count: " + BankAccount.getNumAccounts());
     }
 }

@@ -1,89 +1,84 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        int[][] A = {{1, 2, 3}, {4, 5, 6}};
-        int[][] B = {{1, 2}, {3, 4}, {4, 5}};
-        System.out.println("\nMatrix A: ");
-        printMatrix(A);
-        System.out.println("\nMatrix B: ");
-        printMatrix(B);
-
-        int[][] prod = matrixMul(A, B);
-        System.out.println("\nA*B = ");
-        printMatrix(prod);
-
-        int[][] C = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-        int[][] D = {{9, 8, 7}, {6, 5, 4}, {3, 2, 1}};
-        System.out.println("\nMatrix C: ");
-        printMatrix(C);
-        System.out.println("\nMatrix D: ");
-        printMatrix(D);
-
-        int[][] sum = matAdd(C, D);
-        System.out.println("\nC+D = ");
-        printMatrix(sum);
-
-        int[][] difference = matSub(C, D);
-        System.out.println("\nC-D = ");
-        printMatrix(difference);
+        int[][] a = {{1, 2, 3}, {4, 5, 6}};
+        int[][] b = {{1, 2}, {3, 4}, {4, 5}};
+        int[][] c = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] d = {{9, 8, 7}, {6, 5, 4}, {3, 2, 1}};
+        System.out.println("A times B");
+        printGrid(matrixMul(a, b));
+        System.out.println("C plus D");
+        printGrid(matAdd(c, d));
+        System.out.println("C minus D");
+        printGrid(matSub(c, d));
+        System.out.println("A plus B");
+        printGrid(matAdd(a, b));
     }
 
-    /*Assume each has at least one element*/
-    public static int[][] matrixMul(int[][] A, int[][] B) {
-        int r1 = A.length;
-        int c1 = A[0].length;
-        int r2 = B.length;
-        int c2 = B[0].length;
-        int[][] product = new int[r1][c2];
-        for (int i = 0; i < r1; i++) {
-            for (int j = 0; j < c2; j++) {
-                for (int k = 0; k < c1; k++) {
-                    product[i][j] += A[i][k] * B[k][j];
+    static int[][] matrixMul(int[][] a, int[][] b) {
+        int shared = width(a);
+        int outColumns = width(b);
+        if (shared == 0 || outColumns == 0 || shared != b.length) {
+            return null;
+        }
+        int[][] product = new int[a.length][outColumns];
+        for (int row = 0; row < a.length; row++) {
+            for (int column = 0; column < outColumns; column++) {
+                int total = 0;
+                for (int index = 0; index < shared; index++) {
+                    total += a[row][index] * b[index][column];
                 }
+                product[row][column] = total;
             }
         }
         return product;
     }
 
-    /*Assume each has at least one element and both matricies have the same dimensions*/
-    public static int[][] matSub(int[][] A, int[][] B) {
-        int row = A.length;
-        int col = A[0].length;
-        int[][] difference = new int[row][col];
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                difference[i][j] = A[i][j] - B[i][j];
-            }
-        }
-        return difference;
+    static int[][] matAdd(int[][] a, int[][] b) {
+        return combine(a, b, 1);
     }
 
-    /*Assume each has at least one element and both matricies have the same dimensions*/
-    public static int[][] matAdd(int[][] A, int[][] B) {
-        int row = A.length;
-        int col = A[0].length;
-        int[][] sum = new int[row][col];
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                sum[i][j] = A[i][j] + B[i][j];
-            }
-        }
-        return sum;
+    static int[][] matSub(int[][] a, int[][] b) {
+        return combine(a, b, -1);
     }
 
-    public static void printMatrix(int[][] matrix) {
+    private static int[][] combine(int[][] a, int[][] b, int sign) {
+        int columns = width(a);
+        if (columns == 0 || columns != width(b) || a.length != b.length) {
+            return null;
+        }
+        int[][] result = new int[a.length][columns];
+        for (int row = 0; row < a.length; row++) {
+            for (int column = 0; column < columns; column++) {
+                result[row][column] = a[row][column] + sign * b[row][column];
+            }
+        }
+        return result;
+    }
+
+    private static int width(int[][] matrix) {
+        if (matrix.length == 0) {
+            return 0;
+        }
+        int columns = matrix[0].length;
         for (int[] row : matrix) {
-            for (int i : row) {
-                System.out.print(i + " ");
+            if (row.length != columns) {
+                return 0;
             }
-            System.out.println();
+        }
+        return columns;
+    }
+
+    static void printGrid(int[][] grid) {
+        if (grid == null) {
+            System.out.println("Incompatible dimensions");
+            return;
+        }
+        for (int[] row : grid) {
+            String line = "";
+            for (int value : row) {
+                line += value + " ";
+            }
+            System.out.println(line.trim());
         }
     }
 }

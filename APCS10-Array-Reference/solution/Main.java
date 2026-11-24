@@ -1,77 +1,45 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        //Examples of array creation
-        int[] dataOne = new int[5];
-        int[] dataTwo = {1, 2, 3, 4, 5};
-
-        //Examples of indexing
-        int oneDataTwo = dataTwo[0];
-        int twoDataTwo = dataTwo[2];
-
-        //Example of indexOutOfBounds
-        //int error = dataTwo[6];
-
-        //Using length
-        System.out.println(dataOne.length);
-        System.out.println(dataTwo.length);
-
-        //Iteration with standard for loop to set
-        for (int i = 0; i < dataOne.length; i++) {
-            dataOne[i] = i;
+        int[] original = new int[5];
+        System.out.println("First default: " + original[0]);
+        System.out.println("Length: " + original.length);
+        for (int index = 0; index < original.length; index++) {
+            original[index] = index;
         }
-        //Iteration with while loop to display
-        int i = 0;
-        while (i < dataOne.length) {
-            System.out.println(dataOne[i]);
-            i++;
-        }
-        square(dataOne); //squares each element
-        i = 0;
-        while (i < dataOne.length) {
-            System.out.println(dataOne[i]);
-            i++; //Show changes
-        }
-
-        //Creation of two dimensional array
-        int[][] matrix = new int[5][5];
-        //Example of matrix iteration
-        i = 0;
-        int count = 0;
-        while (i < matrix.length) {
-            int j = 0;
-            while (j < matrix[i].length) {
-                matrix[i][j] = count;
-                j++;
-                count++;
+        System.out.println("Last index: " + (original.length - 1));
+        System.out.println("Before: " + values(original));
+        square(original);
+        System.out.println("After square: " + values(original));
+        replaceLocally(original);
+        System.out.println("After rebinding: " + values(original));
+        int[][] matrix = {{1, 2, 3}, {4, 5, 6}};
+        int total = 0;
+        for (int[] row : matrix) {
+            for (int value : row) {
+                total += value;
             }
-            i++;
         }
+        System.out.println("Grid sum: " + total);
+    }
 
-        //Example 2d traversal using enhanced for loops
-        int[][] array2 = {{1, 2, 3, 4, 5},
-                          {6, 7, 8, 9, 10},
-                          {11, 12, 13, 14, 15},
-                          {16, 17, 18, 19, 20},
-                          {21, 22, 23, 24, 25}};
-        for (int[] arr : array2) {
-            for (int num : arr) {
-                System.out.print(num + " ");
-            }
-            System.out.println();
+    static void square(int[] input) {
+        for (int index = 0; index < input.length; index++) {
+            input[index] *= input[index];
         }
     }
 
-    public static void square(int[] input) {
-        for (int i = 0; i < input.length; i++) {
-            input[i] *= input[i];
+    static void replaceLocally(int[] input) {
+        input = new int[] {42};
+        System.out.println("New local first: " + input[0]);
+    }
+
+    static String values(int[] sequence) {
+        String line = "";
+        int index = 0;
+        while (index < sequence.length) {
+            line += sequence[index] + " ";
+            index++;
         }
+        return line.trim();
     }
 }

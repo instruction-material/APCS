@@ -1,6 +1,5 @@
-# APCS10 Matrix Arithmetic starter
+# Matrix Arithmetic starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Run `javac Main.java && java Main` from this folder.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+The starter supplies shape checks and output allocation. Complete combine using its sign to add or subtract corresponding cells. Complete matrixMul by accumulating one product for each common index per result cell. Use rectangular grids with row and column counts above zero and intermediate arithmetic in int range. Return null for incompatible, empty, or jagged grids.

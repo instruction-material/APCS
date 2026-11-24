@@ -1,6 +1,5 @@
-# APCS10 Practice With Two Dimensional Arrays starter
+# Practice With Two-Dimensional Arrays starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Run `javac Main.java && java Main` from this folder.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+The search and grid printer are supplied. Complete sumOfArray using the row helper, then complete isRowMagic. Compare each row with the first. An empty grid has sum 0 and an empty or single-row grid has no unequal row sums. Use rows containing integers and sums within the int range.

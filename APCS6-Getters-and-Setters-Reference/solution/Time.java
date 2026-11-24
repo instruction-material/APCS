@@ -1,63 +1,81 @@
-public class Time {
+public final class Time {
     private int hrs;
     private int mins;
     private int secs;
 
     public Time() {
-        //implementation not shown
+        this(0, 0, 0);
     }
 
-    public Time(int h, int m, int s) {
-        //implementation not shown
+    public Time(int hours, int minutes, int seconds) {
+        if (!resetTime(hours, minutes, seconds)) {
+            throw new IllegalArgumentException("Invalid time");
+        }
     }
 
-    public void resetTime(int h, int m, int s) {
-        //implementation not shown
-    }
-
-    public void increment() {
-        //implementation not shown
-    }
-
-    public boolean equals(Time t) {
-        //implementation not shown
-        return false;
-    }
-
-    public boolean lessThan(Time t) {
-        //implementation not shown
-        return false;
-    }
-
-    public String toString() {
-        //implementation not shown
-        return "";
+    public boolean resetTime(int hours, int minutes, int seconds) {
+        if (!inRange(hours, 24) || !inRange(minutes, 60) || !inRange(seconds, 60)) {
+            return false;
+        }
+        hrs = hours;
+        mins = minutes;
+        secs = seconds;
+        return true;
     }
 
     public int getHours() {
         return hrs;
     }
 
-    public void setHours(int h) {
-        /*if .... condition to control what this variable can be set to */
-        this.hrs = h;
-    }
-
     public int getMins() {
         return mins;
-    }
-
-    public void setMins(int m) {
-        /*if .... condition to control what this variable can be set to */
-        this.mins = m;
     }
 
     public int getSecs() {
         return secs;
     }
 
-    public void setSecs(int s) {
-        /*if .... condition to control what this variable can be set to */
-        this.secs = s;
+    public void setHours(int hours) {
+        if (inRange(hours, 24)) {
+            hrs = hours;
+        }
+    }
+
+    public void setMins(int minutes) {
+        if (inRange(minutes, 60)) {
+            mins = minutes;
+        }
+    }
+
+    public void setSecs(int seconds) {
+        if (inRange(seconds, 60)) {
+            secs = seconds;
+        }
+    }
+
+    public void increment() {
+        int next = (secondsSinceMidnight() + 1) % 86400;
+        resetTime(next / 3600, next / 60 % 60, next % 60);
+    }
+
+    public boolean sameTime(Time other) {
+        return other != null && secondsSinceMidnight() == other.secondsSinceMidnight();
+    }
+
+    public boolean lessThan(Time other) {
+        return secondsSinceMidnight() < other.secondsSinceMidnight();
+    }
+
+    @Override
+    public String toString() {
+        return String.format(java.util.Locale.ROOT, "%02d:%02d:%02d", hrs, mins, secs);
+    }
+
+    private int secondsSinceMidnight() {
+        return 3600 * hrs + 60 * mins + secs;
+    }
+
+    private static boolean inRange(int value, int limit) {
+        return value >= 0 && value < limit;
     }
 }

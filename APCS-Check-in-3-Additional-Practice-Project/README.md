@@ -1,11 +1,5 @@
-# APCS Check in 3 Additional Practice Project
+# Letter Shifter
 
-Canonical source repository: `APCS`
+Use two subclasses with one shared letter transformation.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Open [starter](starter) for the assignment or [solution](solution) for the worked reference.

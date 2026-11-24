@@ -1,34 +1,20 @@
 public class Shifter {
-
-    public String shift(String word) {
-        return shift(word, 0);
+    public String shift(String text) {
+        return shift(text, 0);
     }
 
-    protected String shift(String word, int amount) {
-
-        // convert to char array
-        char[] letters = word.toCharArray();
-        String returnValue = "";
-
-        int shift;
-        for (char letter : letters) {
+    protected String shift(String text, int amount) {
+        StringBuilder result = new StringBuilder();
+        int offset = Math.floorMod(amount, 26);
+        for (char letter : text.toCharArray()) {
             if (letter >= 'A' && letter <= 'Z') {
-                // UPPER CASE
-                shift = letter - 'A';
-                shift += amount;
-                shift = shift % 26;
-                returnValue += (char)('A' + shift);
+                result.append((char) ('A' + (letter - 'A' + offset) % 26));
             } else if (letter >= 'a' && letter <= 'z') {
-                // lower case
-                shift = letter - 'a';
-                shift += amount;
-                shift = shift % 26;
-                returnValue += (char)('a' + shift);
+                result.append((char) ('a' + (letter - 'a' + offset) % 26));
             } else {
-                // everything else
-                returnValue += letter;
+                result.append(letter);
             }
         }
-        return returnValue;
+        return result.toString();
     }
 }
