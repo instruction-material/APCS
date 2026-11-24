@@ -1,11 +1,14 @@
 public class Poodle extends Dog {
-    public Poodle(String name, String owner, String color, int age) {
-        super(name, "Boof Boof", owner, color, age, 20);
+    public Poodle(String name) {
+        this(name, 20);
     }
 
-    //example of an overriden method
+    protected Poodle(String name, int size) {
+        super(name, "Boof", size);
+    }
+
     @Override
-    public void lost() {
-        System.out.println("Poodles are too smart to get lost!");
+    public String checkIn() {
+        return super.checkIn() + " Stays with the group.";
     }
 }

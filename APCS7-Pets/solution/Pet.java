@@ -1,93 +1,29 @@
 public class Pet {
-    private String name;
-    private boolean isMale;
-    private int age;
-    private String owner;
-    private String type;
+    private final String name;
+    private final int age;
 
-    public Pet(String name, boolean isMale, int age, String owner) {
+    public Pet(String name, int age) {
         this.name = name;
-        this.isMale = isMale;
         this.age = age;
-        this.owner = owner;
-        this.type = "unknown";
     }
 
-    //getters and setters
     public String name() {
-        return this.name;
+        return name;
     }
 
-    public void name(String name) {
-        this.name = name;
+    public String kind() {
+        return "pet";
     }
 
-    public boolean isMale() {
-        return this.isMale;
+    public String food() {
+        return "standard food";
     }
 
-    public void isMale(boolean isMale) {
-        this.isMale = isMale;
+    public String play() {
+        return name() + " has a play break.";
     }
 
-    public int age() {
-        return this.age;
-    }
-
-    public void age(int age) {
-        this.age = age;
-    }
-
-    public String owner() {
-        return this.owner;
-    }
-
-    public void owner(String owner) {
-        this.owner = owner;
-    }
-
-    public String type() {
-        return type;
-    }
-
-    public void type(String type) {
-        this.type = type;
-    }
-
-    //actions
-    public void feed() {
-        System.out.println("Feeding " + this.name());
-    }
-
-    public void playWith() {
-        System.out.println("Playing with " + this.name());
-    }
-
-    public void makeSound() {
-    }
-
-    @Override
-    public String toString() {
-        String adjective;
-        if (isMale) {
-            adjective = "his";
-        } else {
-            adjective = "her";
-        }
-        return name + " is a " + type + ", is " + age + " years old, and " +
-            owner() + " is " + adjective + " owner";
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof Pet) {
-            Pet that = (Pet)obj;
-            return this.name.equals(that.name()) &&
-                this.isMale == that.isMale() && this.age == that.age() &&
-                this.owner.equals(that.owner()) &&
-                this.type.equals(that.type());
-        } else {
-            return false;
-        }
+    public String describe() {
+        return name() + " (" + age + ") is a " + kind() + ".";
     }
 }

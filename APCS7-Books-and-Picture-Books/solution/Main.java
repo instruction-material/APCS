@@ -1,34 +1,14 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        PictureBook cat =
-            new PictureBook("The Cat in the Hat", "Dr. Seuss", 0, "Dr. Seuss");
-        PictureBook chicka = new PictureBook("Chicka Chicka Boom Boom",
-                                             "Bill Martin", 5, "Lois Ehlert");
-        PictureBook eggs =
-            new PictureBook("Green Eggs and Ham", "Dr. Seuss", 0, "Dr. Seuss");
+        Book book = new Book("Harbor Notes", "Asha Lee", 12);
+        PictureBook first = new PictureBook("Bright Boats", "Asha Lee", 5, "Sam Ortiz");
+        PictureBook second = new PictureBook("Paper Kites", "Jin Reed", 0, "Sam Ortiz");
+        PictureBook third = new PictureBook("Rain Maps", "Jin Reed", 2, "Pat Green");
 
-        System.out.println("\nPicture Books:");
-        System.out.println(cat);
-        System.out.println(chicka);
-        System.out.println(eggs);
-
-        System.out.println("\nThe Cat in the Hat and Chicka Chicka Boom "
-                           + "Boom\nHave the same illustrator:\n" +
-                           cat.hasSameIllustrator(chicka));
-        System.out.println("\nThe Cat in the Hat and Green Eggs and Ham "
-                           + "\nHave the same illustrator:\n" +
-                           cat.hasSameIllustrator(eggs));
-        System.out.println("\nThe Cat in the Hat and Green Eggs and Ham "
-                           + "\nAre the same book:\n" + cat.equals(eggs));
-        System.out.println("\nThe Cat in the Hat and The Cat in the Hat "
-                           + "\nAre the same book:\n" + cat.equals(cat));
+        System.out.println(book);
+        System.out.println(first);
+        System.out.println("Same author: " + first.hasSameAuthor(book));
+        System.out.println("Same illustrator: " + first.hasSameIllustrator(second));
+        System.out.println("Same illustrator: " + first.hasSameIllustrator(third));
     }
 }

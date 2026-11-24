@@ -1,10 +1,10 @@
-public class Primate extends Mamalia {
-    public Primate(String n, String f, String g, String s) {
-        super(n, "Primate", f, g, s);
+public class Primate extends Mammal {
+    public Primate(String name) {
+        super(name);
     }
 
     @Override
-    public String toString() {
-        return super.toString() + " " + this.orderType;
+    public String classification() {
+        return super.classification() + " > Primates";
     }
 }

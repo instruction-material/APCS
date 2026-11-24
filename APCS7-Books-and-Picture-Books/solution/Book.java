@@ -1,58 +1,20 @@
 public class Book {
-    private String title;
-    private String author;
-    private int pageNum;
+    private final String title;
+    private final String author;
+    private final int page;
 
-    public Book(String t, String a, int p) {
-        this.title = t;
-        this.author = a;
-        this.pageNum = p;
+    public Book(String title, String author, int page) {
+        this.title = title;
+        this.author = author;
+        this.page = page;
     }
 
-    public Book(String t, String a) {
-        this.title = t;
-        this.author = a;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public int getPageNum() {
-        return pageNum;
-    }
-
-    public void changePage(int amt) {
-        pageNum += amt;
-    }
-
-    public boolean hasSameAuthor(Book b) {
-        if (author.equals(b.getAuthor())) {
-            return true;
-        } else {
-            return false;
-        }
+    public boolean hasSameAuthor(Book other) {
+        return author.equals(other.author);
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof Book)) {
-            return false;
-        }
-        Book b = (Book)o;
-        if (author.equals(b.getAuthor()) && (title.equals(b.getTitle()))) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public String toString() {
-        return "Title: " + title + ", Author: " + author +
-            ", Page Number: " + pageNum;
+        return title + " by " + author + " (page " + page + ")";
     }
 }

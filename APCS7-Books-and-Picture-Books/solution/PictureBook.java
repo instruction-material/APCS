@@ -1,40 +1,17 @@
 public class PictureBook extends Book {
-    private String illustrator;
+    private final String illustrator;
 
-    public PictureBook(String t, String a, int p, String i) {
-        super(t, a, p);
-        this.illustrator = i;
+    public PictureBook(String title, String author, int page, String illustrator) {
+        super(title, author, page);
+        this.illustrator = illustrator;
     }
 
-    public String getIllustrator() {
-        return illustrator;
-    }
-
-    public void setIllustrator(String i) {
-        illustrator = i;
-    }
-
-    public boolean hasSameIllustrator(PictureBook p) {
-        if (illustrator.equals(p.getIllustrator())) {
-            return true;
-        }
-        return false;
+    public boolean hasSameIllustrator(PictureBook other) {
+        return illustrator.equals(other.illustrator);
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (super.equals(o)) {
-            PictureBook b = (PictureBook)o;
-            if (this.hasSameIllustrator(b)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public String toString() {
-        return "Title: " + this.getTitle() + ", Author: " + this.getAuthor() +
-            ", Illustrator: " + illustrator +
-            " ,Page Number: " + this.getPageNum();
+        return super.toString() + ", illustrated by " + illustrator;
     }
 }

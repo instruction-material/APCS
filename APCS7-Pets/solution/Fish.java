@@ -1,29 +1,20 @@
 public class Fish extends Pet {
-    public Fish(String name, boolean isMale, int age, String owner) {
-        super(name, isMale, age, owner);
-        type("fish");
+    public Fish(String name, int age) {
+        super(name, age);
     }
 
     @Override
-    public void feed() {
-        System.out.println("Feeding " + name() + " some tasty fish flakes!");
+    public String kind() {
+        return "fish";
     }
 
     @Override
-    public void playWith() {
-        System.out.println("It's pretty tough to play with a fish, but it is "
-                           + "fun to watch them for awhile!");
-        makeSound();
+    public String food() {
+        return "flakes";
     }
 
     @Override
-    public void makeSound() {
-        System.out.println("gurgle gurgle");
-    }
-
-    //unique fish methods
-    public void cleanTank() {
-        System.out.println("Cleaning " + name() +
-                           "'s tank out! Now it's nice and clean!");
+    public String play() {
+        return name() + " swims past a hoop.";
     }
 }
