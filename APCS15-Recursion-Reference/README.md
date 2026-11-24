@@ -1,11 +1,3 @@
-# APCS15 Recursion Reference
+# Recursion reference
 
-Canonical source repository: `APCS`
-
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Trace how one recursive call stores an index while the next call works. Use the starter to predict the printed order and the reference to compare printing before and after the recursive call.

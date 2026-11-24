@@ -1,37 +1,25 @@
-import java.util.Scanner;
-
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-        System.out.println("\nEnter a bunch of words and then I'll print "
-                           + "them back out in reverse order. When you're "
-                           + "finished entering words, enter \".\"\n");
-        stackWords();
+        String[] words = {"red", "fern", ".", "skip"};
+        System.out.println("After the recursive call:");
+        printInReverse(words, 0);
+        System.out.println("Before the recursive call:");
+        printInInputOrder(words, 0);
     }
 
-    public static void stackWords() {
-
-        //1. get the word
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Word: ");
-        String userInput = scanner.nextLine();
-
-        //2. check if it's a period
-        if (userInput.equals(".")) {
-            //base case
-            System.out.println();
-        } else {
-            //recursive step
-            stackWords();
+    static void printInReverse(String[] words, int index) {
+        if (index == words.length || words[index].equals(".")) {
+            return;
         }
+        printInReverse(words, index + 1);
+        System.out.println(words[index]);
+    }
 
-        System.out.println("Word: " + userInput);
+    static void printInInputOrder(String[] words, int index) {
+        if (index == words.length || words[index].equals(".")) {
+            return;
+        }
+        System.out.println(words[index]);
+        printInInputOrder(words, index + 1);
     }
 }
