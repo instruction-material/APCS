@@ -1,11 +1,5 @@
-# APCS1 Hospital Survey
+# Hospital survey
 
-Canonical source repository: `APCS`
+Read a fictional practice record containing a text code, a whole-number wait, a multiword comment, and a true or false field.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Open the starter to begin. Use the reference to check a completed attempt.

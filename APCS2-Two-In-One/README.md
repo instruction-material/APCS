@@ -1,11 +1,5 @@
-# APCS2 Two In One
+# Two in one
 
-Canonical source repository: `APCS`
+Test whether the sum of two of three input values equals the remaining value. Treat the three input positions as separate even when their values match.
 
-This project was migrated from the legacy direct-source layout on 2026-05-14. The original files are preserved under `solution/` as the
-current solution/reference snapshot.
-
-## Structure
-
-- `solution/` contains the migrated source files.
-- `starter/` is present to keep the course wrapper shape consistent; add a distinct starter snapshot there when one is available.
+Open the starter to begin. Use the reference to check a completed attempt.

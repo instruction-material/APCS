@@ -1,6 +1,7 @@
-# APCS2 Two In One starter
+# Two in one starter
 
-This `starter/` directory is intentionally present for wrapper consistency in `APCS`.
+Run `javac Main.java && java Main`, then enter the example input in the console.
 
-The migrated legacy files for this project currently live under `solution/`. Add a distinct `starter/` implementation here when the course
-source is split into separate starter and solution snapshots.
+Replace the false placeholder with a compound expression. Test each of the three pairings and combine the comparisons with ||.
+
+Use integers from −10000 to 10000. `2 3 5`, `5 2 3`, `2 5 3`, and `2 2 4` all give true. `2 3 6` gives false, and `-2 3 1` gives true. At least one comparison must be true for the whole expression to be true.

@@ -1,39 +1,18 @@
 import java.util.Scanner;
 
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
 public class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("\nMONEY ROUNDER:");
-        System.out.print("Enter a dollar amount: $");
-        double dollars = scanner.nextDouble();
-
-        //round down
-        int floor = (int)dollars;
-        System.out.println("\nRounded Down: $" + floor);
-
-        //round up
-        int ceiling = (int)dollars + 1;
-        System.out.println("Rounded Up: $" + ceiling);
-
-        //round to nearest 1 dollar
-        int nearestDollar = (int)(dollars + 0.5);
-        System.out.println("Nearest Dollar: $" + nearestDollar);
-
-        //round to nearest 10 dollars
-        int nearestTen = (int)((dollars / 10) + 0.5) * 10;
-        System.out.println("Nearest 10 Dollars: $" + nearestTen);
-
-        //round to nearest 100 dollars
-        int nearestHundred = (int)((dollars / 100) + 0.5) * 100;
-        System.out.println("Nearest 100 Dollars: $" + nearestHundred);
+        Scanner input = new Scanner(System.in);
+        double amount = input.nextDouble();
+        int down = (int) amount;
+        System.out.println("Rounded down: " + down);
+        int up = down;
+        if (amount > down) {
+            up++;
+        }
+        System.out.println("Rounded up: " + up);
+        System.out.println("Nearest 1: " + (int) (amount + 0.5));
+        System.out.println("Nearest 10: " + (int) (amount / 10 + 0.5) * 10);
+        System.out.println("Nearest 100: " + (int) (amount / 100 + 0.5) * 100);
     }
 }
