@@ -6,6 +6,9 @@ public class Farm {
     private boolean milked;
 
     public Farm(int cows, int goats) {
+        if (cows < 0 || goats < 0) {
+            throw new IllegalArgumentException("Animal counts must be nonnegative");
+        }
         numCows = cows;
         numGoats = goats;
         cowsFed = false;
@@ -34,8 +37,7 @@ public class Farm {
     }
 
     public boolean feedGoats() {
-        if (goatsFed) {
-            System.out.println("The goats have already been fed");
+        if (goatsFed || numGoats == 0) {
             return false;
         }
         goatsFed = true;
@@ -46,8 +48,7 @@ public class Farm {
     }
 
     public boolean feedCows() {
-        if (cowsFed) {
-            System.out.println("The cows have already been fed");
+        if (cowsFed || numCows == 0) {
             return false;
         }
         cowsFed = true;
@@ -58,8 +59,7 @@ public class Farm {
     }
 
     public boolean milk() {
-        if (milked) {
-            System.out.println("They have already been milked");
+        if (milked || numCows == 0) {
             return false;
         }
         milked = true;

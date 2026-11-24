@@ -1,5 +1,4 @@
 public class RightTriangle extends Shape {
-    private double sideLength;
     private double base;
     private double height;
     private double hypotenuse;
@@ -11,10 +10,12 @@ public class RightTriangle extends Shape {
         this.hypotenuse = Math.sqrt(Math.pow(base, 2) + Math.pow(height, 2));
     }
 
+    @Override
     public double getArea() {
         return (base * height) / 2.0;
     }
 
+    @Override
     public double getPerimeter() {
         return base + height + hypotenuse;
     }
