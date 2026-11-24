@@ -1,43 +1,22 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
+public class Main {
     public static void main(String[] args) {
-
-        System.out.println("\nSUIT:");
-        Suit suit = new Suit("Diamonds");
-        System.out.println(suit);
-
-        System.out.println("DECK:");
+        Suit suit = new Suit("Clubs");
         Deck deck = new Deck();
-        System.out.println("Initial deck size: " + deck.size());
-        System.out.println("Removing 45 cards from the deck: ");
-        for (int i = 0; i < 45; i++) {
-            deck.removeRandom();
-        }
-        System.out.println("Deck size now: " + deck.size());
-        System.out.println("\nRemaining deck:");
-        System.out.println(deck);
-
-        System.out.println("HAND:");
         Hand hand = new Hand();
-        System.out.println("Add 2 cards from the deck");
-        for (int i = 0; i < 2; i++) {
-            hand.addCard(deck.removeRandom());
+
+        Card selected = suit.remove(5);
+        System.out.println("Selected: " + selected);
+        if (selected != null) {
+            hand.addCard(selected);
         }
-        System.out.println("Add 2 cards from the suit");
-        for (int i = 0; i < 2; i++) {
-            hand.addCard(suit.remove(0));
+        Card drawn = deck.removeRandom();
+        if (drawn != null) {
+            hand.addCard(drawn);
         }
-        System.out.println("\nCurrent hand: \n" + hand);
-        System.out.println("Remove from the hand one at a time: ");
-        System.out.println("Next: " + hand.removeFirst());
-        System.out.println("Next: " + hand.removeFirst());
-        System.out.println("Next: " + hand.removeFirst());
+
+        System.out.println("Cards left in suit: " + suit.size());
+        System.out.println("Cards left in deck: " + deck.size());
+        System.out.println("Hand size: " + hand.size());
+        System.out.println("First card: " + hand.removeFirst());
     }
 }

@@ -12,7 +12,7 @@ public class Suit {
 
     public Card remove(int index) {
         if (index >= 0 && index < size()) {
-            return cards.remove(0);
+            return cards.remove(index);
         }
         return null;
     }

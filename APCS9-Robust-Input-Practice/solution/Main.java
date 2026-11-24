@@ -1,19 +1,19 @@
-/**
- * @brief Solve the lesson problem using the provided input and output format
- */
-class Main {
-    /**
-	 * @brief Read input, compute the answer, and write output
-	 *
-	 * @param args Command-line arguments
-	 */
-    public static void main(String[] args) {
+import java.util.NoSuchElementException;
 
-        RobustScanner scanner = new RobustScanner();
+class Main {
+    public static void main(String[] args) {
+        try {
+            run(new RobustScanner());
+        } catch (NoSuchElementException endOfInput) {
+            System.out.println("End of input.");
+        }
+    }
+
+    private static void run(RobustScanner scanner) {
 
         //1. divide two integers
         System.out.println("\nAttempt to divide two integers...");
-        System.out.print("Enter an number: ");
+        System.out.print("Enter a number: ");
         int num1 = scanner.nextInt();
         int num2 = 0;
         while (num2 == 0) {
@@ -47,21 +47,15 @@ class Main {
 
         //4. count from num1 to num2
         System.out.println("\nAttempt to count from num1 to num2:");
-        System.out.print("Enter an number: ");
+        System.out.print("Enter a number: ");
         num1 = scanner.nextInt();
         System.out.print("Enter another number: ");
         num2 = scanner.nextInt();
 
-        //this always works,
-        //regardless of whether we should count up or down
-        if (num1 < num2) {
-            for (int i = num1; i <= num2; i++) {
-                System.out.println(i);
-            }
-        } else {
-            for (int i = num1; i >= num2; i--) {
-                System.out.println(i);
-            }
+        long step = num1 <= num2 ? 1 : -1;
+        for (long value = num1; value != num2; value += step) {
+            System.out.println(value);
         }
+        System.out.println(num2);
     }
 }
